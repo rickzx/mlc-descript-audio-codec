@@ -4,6 +4,7 @@ from typing import List, Union
 from tvm.relax.frontend import nn
 
 from layers import Snake1d, WNConv1d
+from quantize import ResidualVectorQuantize
 
 
 class ResidualUnit(nn.Module):
@@ -92,7 +93,44 @@ class DAC(nn.Module):
         quantizer_dropout: bool = False,
         sample_rate: int = 44100,
     ):
-        pass
+        self.encoder_dim = encoder_dim
+        self.encoder_rates = encoder_rates
+        self.decoder_dim = decoder_dim
+        self.decoder_rates = decoder_rates
+        self.sample_rate = sample_rate
 
-    def forward(self, x):
-        pass
+        if latent_dim is None:
+            latent_dim = encoder_dim * (2 ** len(encoder_rates))
+
+        self.latent_dim = latent_dim
+
+        self.encoder = Encoder(encoder_dim, encoder_rates, latent_dim)
+
+        self.n_codebooks = n_codebooks
+        self.codebook_size = codebook_size
+        self.codebook_dim = codebook_dim
+        self.quantizer = ResidualVectorQuantize(
+            input_dim=latent_dim,
+            n_codebooks=n_codebooks,
+            codebook_size=codebook_size,
+            codebook_dim=codebook_dim,
+            quantizer_dropout=quantizer_dropout,
+        )
+
+    def forward(self, audio_data):
+        z = self.encoder(audio_data)
+        z, codes = self.quantizer(z)
+        return z, codes
+
+    def get_default_spec(self):
+        mod_spec = {
+            "forward": {
+                "audio_data": nn.spec.Tensor(["batch_size", 1, "seq_len"], "float32"),
+                "$": {
+                    "param_mode": "packed",
+                    "effect_mode": "none",
+                },
+            }
+        }
+
+        return nn.spec.ModuleSpec.from_raw(mod_spec, self)
