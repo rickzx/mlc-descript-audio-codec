@@ -2,7 +2,7 @@ from typing import Optional, Union
 
 from tvm.relax.frontend import nn
 
-from layers import WNConv1d
+from .layers import WNConv1d
 
 
 def normalize(x: nn.Tensor, axis: Optional[int] = 1, eps: float = 1e-12):

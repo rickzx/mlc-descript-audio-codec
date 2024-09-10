@@ -4,8 +4,8 @@ from typing import List, Union
 import numpy as np
 from tvm.relax.frontend import nn
 
-from layers import Snake1d, Tanh, WNConv1d, WNConvTranspose1d
-from quantize import ResidualVectorQuantize
+from mlc_dac.layers import Snake1d, Tanh, WNConv1d, WNConvTranspose1d
+from mlc_dac.quantize import ResidualVectorQuantize
 
 
 class ResidualUnit(nn.Module):
@@ -148,12 +148,14 @@ class DAC(nn.Module):
         codebook_dim: Union[int, list] = 8,
         quantizer_dropout: bool = False,
         sample_rate: int = 44100,
+        debug: bool = False,
     ):
         self.encoder_dim = encoder_dim
         self.encoder_rates = encoder_rates
         self.decoder_dim = decoder_dim
         self.decoder_rates = decoder_rates
         self.sample_rate = sample_rate
+        self.effect_mode = "plain" if debug else "none"
 
         if latent_dim is None:
             latent_dim = encoder_dim * (2 ** len(encoder_rates))
@@ -200,14 +202,14 @@ class DAC(nn.Module):
                 "audio_data": nn.spec.Tensor(["batch_size", 1, "seq_len"], "float32"),
                 "$": {
                     "param_mode": "packed",
-                    "effect_mode": "plain",
+                    "effect_mode": self.effect_mode,
                 },
             },
             "encode": {
                 "audio_data": nn.spec.Tensor(["batch_size", 1, "seq_len"], "float32"),
                 "$": {
                     "param_mode": "packed",
-                    "effect_mode": "plain",
+                    "effect_mode": self.effect_mode,
                 },
             },
             "decode": {
@@ -216,7 +218,7 @@ class DAC(nn.Module):
                 ),
                 "$": {
                     "param_mode": "packed",
-                    "effect_mode": "plain",
+                    "effect_mode": self.effect_mode,
                 },
             },
         }

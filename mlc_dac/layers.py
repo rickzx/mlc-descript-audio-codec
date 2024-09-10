@@ -153,7 +153,14 @@ class WNConvTranspose1d(nn.Module):
             name="wnconvtranspose1d",
         )
         return nn.op.conv1d_transpose(
-            x, weight, self.bias, self.stride, self.padding, self.output_padding, self.dilation, self.groups
+            x,
+            weight,
+            self.bias,
+            self.stride,
+            self.padding,
+            self.output_padding,
+            self.dilation,
+            self.groups,
         )
 
 

@@ -6,7 +6,7 @@ from tvm.runtime import Device, NDArray
 from tvm.contrib import tvmjs
 from tvm.runtime.ndarray import array as as_ndarray
 
-from dac import DAC
+from mlc_dac.dac import DAC
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 logger = logging.getLogger(__name__)
