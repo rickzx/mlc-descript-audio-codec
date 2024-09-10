@@ -1148,7 +1148,47 @@
         {
             "dataPath": "params_shard_2.bin",
             "format": "raw-shard",
-            "nbytes": 30362176,
+            "nbytes": 44040192,
+            "records": [
+                {
+                    "name": "decoder.model.0.weight_v",
+                    "shape": [
+                        1536,
+                        1024,
+                        7
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 44040192,
+                    "byteOffset": 0
+                }
+            ],
+            "md5sum": "d7cbdd6576b68005dd7755641c84342c"
+        },
+        {
+            "dataPath": "params_shard_3.bin",
+            "format": "raw-shard",
+            "nbytes": 75497472,
+            "records": [
+                {
+                    "name": "decoder.model.1.block.1.weight_v",
+                    "shape": [
+                        1536,
+                        768,
+                        16
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 75497472,
+                    "byteOffset": 0
+                }
+            ],
+            "md5sum": "6cebf8892b7627ca7fc12cc193df5f5c"
+        },
+        {
+            "dataPath": "params_shard_4.bin",
+            "format": "raw-shard",
+            "nbytes": 30395968,
             "records": [
                 {
                     "name": "encoder.block.4.block.1.block.1.weight_v",
@@ -2100,9 +2140,1393 @@
                     "format": "raw",
                     "nbytes": 32768,
                     "byteOffset": 30329408
+                },
+                {
+                    "name": "decoder.model.0.weight_g",
+                    "shape": [
+                        1536,
+                        1,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 6144,
+                    "byteOffset": 30362176
+                },
+                {
+                    "name": "decoder.model.0.bias",
+                    "shape": [
+                        1536
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 6144,
+                    "byteOffset": 30368320
+                },
+                {
+                    "name": "decoder.model.1.block.0.alpha",
+                    "shape": [
+                        1,
+                        1536,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 6144,
+                    "byteOffset": 30374464
+                },
+                {
+                    "name": "decoder.model.1.block.1.weight_g",
+                    "shape": [
+                        1536,
+                        1,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 6144,
+                    "byteOffset": 30380608
+                },
+                {
+                    "name": "decoder.model.1.block.1.bias",
+                    "shape": [
+                        768
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 3072,
+                    "byteOffset": 30386752
+                },
+                {
+                    "name": "decoder.model.1.block.2.block.0.alpha",
+                    "shape": [
+                        1,
+                        768,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 3072,
+                    "byteOffset": 30389824
+                },
+                {
+                    "name": "decoder.model.1.block.2.block.1.weight_g",
+                    "shape": [
+                        768,
+                        1,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 3072,
+                    "byteOffset": 30392896
                 }
             ],
-            "md5sum": "13f0693c6669de28b645224b0b278706"
+            "md5sum": "f18d4eeddaa14424024c91a4bc4d35fe"
+        },
+        {
+            "dataPath": "params_shard_5.bin",
+            "format": "raw-shard",
+            "nbytes": 18892800,
+            "records": [
+                {
+                    "name": "decoder.model.1.block.2.block.1.weight_v",
+                    "shape": [
+                        768,
+                        768,
+                        7
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 16515072,
+                    "byteOffset": 0
+                },
+                {
+                    "name": "decoder.model.1.block.2.block.1.bias",
+                    "shape": [
+                        768
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 3072,
+                    "byteOffset": 16515072
+                },
+                {
+                    "name": "decoder.model.1.block.2.block.2.alpha",
+                    "shape": [
+                        1,
+                        768,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 3072,
+                    "byteOffset": 16518144
+                },
+                {
+                    "name": "decoder.model.1.block.2.block.3.weight_g",
+                    "shape": [
+                        768,
+                        1,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 3072,
+                    "byteOffset": 16521216
+                },
+                {
+                    "name": "decoder.model.1.block.2.block.3.weight_v",
+                    "shape": [
+                        768,
+                        768,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 2359296,
+                    "byteOffset": 16524288
+                },
+                {
+                    "name": "decoder.model.1.block.2.block.3.bias",
+                    "shape": [
+                        768
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 3072,
+                    "byteOffset": 18883584
+                },
+                {
+                    "name": "decoder.model.1.block.3.block.0.alpha",
+                    "shape": [
+                        1,
+                        768,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 3072,
+                    "byteOffset": 18886656
+                },
+                {
+                    "name": "decoder.model.1.block.3.block.1.weight_g",
+                    "shape": [
+                        768,
+                        1,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 3072,
+                    "byteOffset": 18889728
+                }
+            ],
+            "md5sum": "399ec886eb720d491ead49bbe9b2f8c7"
+        },
+        {
+            "dataPath": "params_shard_6.bin",
+            "format": "raw-shard",
+            "nbytes": 18892800,
+            "records": [
+                {
+                    "name": "decoder.model.1.block.3.block.1.weight_v",
+                    "shape": [
+                        768,
+                        768,
+                        7
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 16515072,
+                    "byteOffset": 0
+                },
+                {
+                    "name": "decoder.model.1.block.3.block.1.bias",
+                    "shape": [
+                        768
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 3072,
+                    "byteOffset": 16515072
+                },
+                {
+                    "name": "decoder.model.1.block.3.block.2.alpha",
+                    "shape": [
+                        1,
+                        768,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 3072,
+                    "byteOffset": 16518144
+                },
+                {
+                    "name": "decoder.model.1.block.3.block.3.weight_g",
+                    "shape": [
+                        768,
+                        1,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 3072,
+                    "byteOffset": 16521216
+                },
+                {
+                    "name": "decoder.model.1.block.3.block.3.weight_v",
+                    "shape": [
+                        768,
+                        768,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 2359296,
+                    "byteOffset": 16524288
+                },
+                {
+                    "name": "decoder.model.1.block.3.block.3.bias",
+                    "shape": [
+                        768
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 3072,
+                    "byteOffset": 18883584
+                },
+                {
+                    "name": "decoder.model.1.block.4.block.0.alpha",
+                    "shape": [
+                        1,
+                        768,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 3072,
+                    "byteOffset": 18886656
+                },
+                {
+                    "name": "decoder.model.1.block.4.block.1.weight_g",
+                    "shape": [
+                        768,
+                        1,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 3072,
+                    "byteOffset": 18889728
+                }
+            ],
+            "md5sum": "257d4e892bc6df364f90d8bca6cdd8c2"
+        },
+        {
+            "dataPath": "params_shard_7.bin",
+            "format": "raw-shard",
+            "nbytes": 18874368,
+            "records": [
+                {
+                    "name": "decoder.model.2.block.1.weight_v",
+                    "shape": [
+                        768,
+                        384,
+                        16
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 18874368,
+                    "byteOffset": 0
+                }
+            ],
+            "md5sum": "29b91b6557f5cd9fcf526586cf156ffe"
+        },
+        {
+            "dataPath": "params_shard_8.bin",
+            "format": "raw-shard",
+            "nbytes": 33080832,
+            "records": [
+                {
+                    "name": "decoder.model.1.block.4.block.1.weight_v",
+                    "shape": [
+                        768,
+                        768,
+                        7
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 16515072,
+                    "byteOffset": 0
+                },
+                {
+                    "name": "decoder.model.1.block.4.block.1.bias",
+                    "shape": [
+                        768
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 3072,
+                    "byteOffset": 16515072
+                },
+                {
+                    "name": "decoder.model.1.block.4.block.2.alpha",
+                    "shape": [
+                        1,
+                        768,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 3072,
+                    "byteOffset": 16518144
+                },
+                {
+                    "name": "decoder.model.1.block.4.block.3.weight_g",
+                    "shape": [
+                        768,
+                        1,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 3072,
+                    "byteOffset": 16521216
+                },
+                {
+                    "name": "decoder.model.1.block.4.block.3.weight_v",
+                    "shape": [
+                        768,
+                        768,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 2359296,
+                    "byteOffset": 16524288
+                },
+                {
+                    "name": "decoder.model.1.block.4.block.3.bias",
+                    "shape": [
+                        768
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 3072,
+                    "byteOffset": 18883584
+                },
+                {
+                    "name": "decoder.model.2.block.0.alpha",
+                    "shape": [
+                        1,
+                        768,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 3072,
+                    "byteOffset": 18886656
+                },
+                {
+                    "name": "decoder.model.2.block.1.weight_g",
+                    "shape": [
+                        768,
+                        1,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 3072,
+                    "byteOffset": 18889728
+                },
+                {
+                    "name": "decoder.model.2.block.1.bias",
+                    "shape": [
+                        384
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 1536,
+                    "byteOffset": 18892800
+                },
+                {
+                    "name": "decoder.model.2.block.2.block.0.alpha",
+                    "shape": [
+                        1,
+                        384,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 1536,
+                    "byteOffset": 18894336
+                },
+                {
+                    "name": "decoder.model.2.block.2.block.1.weight_g",
+                    "shape": [
+                        384,
+                        1,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 1536,
+                    "byteOffset": 18895872
+                },
+                {
+                    "name": "decoder.model.2.block.2.block.1.weight_v",
+                    "shape": [
+                        384,
+                        384,
+                        7
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 4128768,
+                    "byteOffset": 18897408
+                },
+                {
+                    "name": "decoder.model.2.block.2.block.1.bias",
+                    "shape": [
+                        384
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 1536,
+                    "byteOffset": 23026176
+                },
+                {
+                    "name": "decoder.model.2.block.2.block.2.alpha",
+                    "shape": [
+                        1,
+                        384,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 1536,
+                    "byteOffset": 23027712
+                },
+                {
+                    "name": "decoder.model.2.block.2.block.3.weight_g",
+                    "shape": [
+                        384,
+                        1,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 1536,
+                    "byteOffset": 23029248
+                },
+                {
+                    "name": "decoder.model.2.block.2.block.3.weight_v",
+                    "shape": [
+                        384,
+                        384,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 589824,
+                    "byteOffset": 23030784
+                },
+                {
+                    "name": "decoder.model.2.block.2.block.3.bias",
+                    "shape": [
+                        384
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 1536,
+                    "byteOffset": 23620608
+                },
+                {
+                    "name": "decoder.model.2.block.3.block.0.alpha",
+                    "shape": [
+                        1,
+                        384,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 1536,
+                    "byteOffset": 23622144
+                },
+                {
+                    "name": "decoder.model.2.block.3.block.1.weight_g",
+                    "shape": [
+                        384,
+                        1,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 1536,
+                    "byteOffset": 23623680
+                },
+                {
+                    "name": "decoder.model.2.block.3.block.1.weight_v",
+                    "shape": [
+                        384,
+                        384,
+                        7
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 4128768,
+                    "byteOffset": 23625216
+                },
+                {
+                    "name": "decoder.model.2.block.3.block.1.bias",
+                    "shape": [
+                        384
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 1536,
+                    "byteOffset": 27753984
+                },
+                {
+                    "name": "decoder.model.2.block.3.block.2.alpha",
+                    "shape": [
+                        1,
+                        384,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 1536,
+                    "byteOffset": 27755520
+                },
+                {
+                    "name": "decoder.model.2.block.3.block.3.weight_g",
+                    "shape": [
+                        384,
+                        1,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 1536,
+                    "byteOffset": 27757056
+                },
+                {
+                    "name": "decoder.model.2.block.3.block.3.weight_v",
+                    "shape": [
+                        384,
+                        384,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 589824,
+                    "byteOffset": 27758592
+                },
+                {
+                    "name": "decoder.model.2.block.3.block.3.bias",
+                    "shape": [
+                        384
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 1536,
+                    "byteOffset": 28348416
+                },
+                {
+                    "name": "decoder.model.2.block.4.block.0.alpha",
+                    "shape": [
+                        1,
+                        384,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 1536,
+                    "byteOffset": 28349952
+                },
+                {
+                    "name": "decoder.model.2.block.4.block.1.weight_g",
+                    "shape": [
+                        384,
+                        1,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 1536,
+                    "byteOffset": 28351488
+                },
+                {
+                    "name": "decoder.model.2.block.4.block.1.weight_v",
+                    "shape": [
+                        384,
+                        384,
+                        7
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 4128768,
+                    "byteOffset": 28353024
+                },
+                {
+                    "name": "decoder.model.2.block.4.block.1.bias",
+                    "shape": [
+                        384
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 1536,
+                    "byteOffset": 32481792
+                },
+                {
+                    "name": "decoder.model.2.block.4.block.2.alpha",
+                    "shape": [
+                        1,
+                        384,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 1536,
+                    "byteOffset": 32483328
+                },
+                {
+                    "name": "decoder.model.2.block.4.block.3.weight_g",
+                    "shape": [
+                        384,
+                        1,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 1536,
+                    "byteOffset": 32484864
+                },
+                {
+                    "name": "decoder.model.2.block.4.block.3.weight_v",
+                    "shape": [
+                        384,
+                        384,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 589824,
+                    "byteOffset": 32486400
+                },
+                {
+                    "name": "decoder.model.2.block.4.block.3.bias",
+                    "shape": [
+                        384
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 1536,
+                    "byteOffset": 33076224
+                },
+                {
+                    "name": "decoder.model.3.block.0.alpha",
+                    "shape": [
+                        1,
+                        384,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 1536,
+                    "byteOffset": 33077760
+                },
+                {
+                    "name": "decoder.model.3.block.1.weight_g",
+                    "shape": [
+                        384,
+                        1,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 1536,
+                    "byteOffset": 33079296
+                }
+            ],
+            "md5sum": "a8283dcf4244f8fd8d9285af7faf2fd3"
+        },
+        {
+            "dataPath": "params_shard_9.bin",
+            "format": "raw-shard",
+            "nbytes": 7104392,
+            "records": [
+                {
+                    "name": "decoder.model.3.block.1.weight_v",
+                    "shape": [
+                        384,
+                        192,
+                        8
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 2359296,
+                    "byteOffset": 0
+                },
+                {
+                    "name": "decoder.model.3.block.1.bias",
+                    "shape": [
+                        192
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 768,
+                    "byteOffset": 2359296
+                },
+                {
+                    "name": "decoder.model.3.block.2.block.0.alpha",
+                    "shape": [
+                        1,
+                        192,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 768,
+                    "byteOffset": 2360064
+                },
+                {
+                    "name": "decoder.model.3.block.2.block.1.weight_g",
+                    "shape": [
+                        192,
+                        1,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 768,
+                    "byteOffset": 2360832
+                },
+                {
+                    "name": "decoder.model.3.block.2.block.1.weight_v",
+                    "shape": [
+                        192,
+                        192,
+                        7
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 1032192,
+                    "byteOffset": 2361600
+                },
+                {
+                    "name": "decoder.model.3.block.2.block.1.bias",
+                    "shape": [
+                        192
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 768,
+                    "byteOffset": 3393792
+                },
+                {
+                    "name": "decoder.model.3.block.2.block.2.alpha",
+                    "shape": [
+                        1,
+                        192,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 768,
+                    "byteOffset": 3394560
+                },
+                {
+                    "name": "decoder.model.3.block.2.block.3.weight_g",
+                    "shape": [
+                        192,
+                        1,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 768,
+                    "byteOffset": 3395328
+                },
+                {
+                    "name": "decoder.model.3.block.2.block.3.weight_v",
+                    "shape": [
+                        192,
+                        192,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 147456,
+                    "byteOffset": 3396096
+                },
+                {
+                    "name": "decoder.model.3.block.2.block.3.bias",
+                    "shape": [
+                        192
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 768,
+                    "byteOffset": 3543552
+                },
+                {
+                    "name": "decoder.model.3.block.3.block.0.alpha",
+                    "shape": [
+                        1,
+                        192,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 768,
+                    "byteOffset": 3544320
+                },
+                {
+                    "name": "decoder.model.3.block.3.block.1.weight_g",
+                    "shape": [
+                        192,
+                        1,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 768,
+                    "byteOffset": 3545088
+                },
+                {
+                    "name": "decoder.model.3.block.3.block.1.weight_v",
+                    "shape": [
+                        192,
+                        192,
+                        7
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 1032192,
+                    "byteOffset": 3545856
+                },
+                {
+                    "name": "decoder.model.3.block.3.block.1.bias",
+                    "shape": [
+                        192
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 768,
+                    "byteOffset": 4578048
+                },
+                {
+                    "name": "decoder.model.3.block.3.block.2.alpha",
+                    "shape": [
+                        1,
+                        192,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 768,
+                    "byteOffset": 4578816
+                },
+                {
+                    "name": "decoder.model.3.block.3.block.3.weight_g",
+                    "shape": [
+                        192,
+                        1,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 768,
+                    "byteOffset": 4579584
+                },
+                {
+                    "name": "decoder.model.3.block.3.block.3.weight_v",
+                    "shape": [
+                        192,
+                        192,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 147456,
+                    "byteOffset": 4580352
+                },
+                {
+                    "name": "decoder.model.3.block.3.block.3.bias",
+                    "shape": [
+                        192
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 768,
+                    "byteOffset": 4727808
+                },
+                {
+                    "name": "decoder.model.3.block.4.block.0.alpha",
+                    "shape": [
+                        1,
+                        192,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 768,
+                    "byteOffset": 4728576
+                },
+                {
+                    "name": "decoder.model.3.block.4.block.1.weight_g",
+                    "shape": [
+                        192,
+                        1,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 768,
+                    "byteOffset": 4729344
+                },
+                {
+                    "name": "decoder.model.3.block.4.block.1.weight_v",
+                    "shape": [
+                        192,
+                        192,
+                        7
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 1032192,
+                    "byteOffset": 4730112
+                },
+                {
+                    "name": "decoder.model.3.block.4.block.1.bias",
+                    "shape": [
+                        192
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 768,
+                    "byteOffset": 5762304
+                },
+                {
+                    "name": "decoder.model.3.block.4.block.2.alpha",
+                    "shape": [
+                        1,
+                        192,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 768,
+                    "byteOffset": 5763072
+                },
+                {
+                    "name": "decoder.model.3.block.4.block.3.weight_g",
+                    "shape": [
+                        192,
+                        1,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 768,
+                    "byteOffset": 5763840
+                },
+                {
+                    "name": "decoder.model.3.block.4.block.3.weight_v",
+                    "shape": [
+                        192,
+                        192,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 147456,
+                    "byteOffset": 5764608
+                },
+                {
+                    "name": "decoder.model.3.block.4.block.3.bias",
+                    "shape": [
+                        192
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 768,
+                    "byteOffset": 5912064
+                },
+                {
+                    "name": "decoder.model.4.block.0.alpha",
+                    "shape": [
+                        1,
+                        192,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 768,
+                    "byteOffset": 5912832
+                },
+                {
+                    "name": "decoder.model.4.block.1.weight_g",
+                    "shape": [
+                        192,
+                        1,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 768,
+                    "byteOffset": 5913600
+                },
+                {
+                    "name": "decoder.model.4.block.1.weight_v",
+                    "shape": [
+                        192,
+                        96,
+                        4
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 294912,
+                    "byteOffset": 5914368
+                },
+                {
+                    "name": "decoder.model.4.block.1.bias",
+                    "shape": [
+                        96
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 384,
+                    "byteOffset": 6209280
+                },
+                {
+                    "name": "decoder.model.4.block.2.block.0.alpha",
+                    "shape": [
+                        1,
+                        96,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 384,
+                    "byteOffset": 6209664
+                },
+                {
+                    "name": "decoder.model.4.block.2.block.1.weight_g",
+                    "shape": [
+                        96,
+                        1,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 384,
+                    "byteOffset": 6210048
+                },
+                {
+                    "name": "decoder.model.4.block.2.block.1.weight_v",
+                    "shape": [
+                        96,
+                        96,
+                        7
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 258048,
+                    "byteOffset": 6210432
+                },
+                {
+                    "name": "decoder.model.4.block.2.block.1.bias",
+                    "shape": [
+                        96
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 384,
+                    "byteOffset": 6468480
+                },
+                {
+                    "name": "decoder.model.4.block.2.block.2.alpha",
+                    "shape": [
+                        1,
+                        96,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 384,
+                    "byteOffset": 6468864
+                },
+                {
+                    "name": "decoder.model.4.block.2.block.3.weight_g",
+                    "shape": [
+                        96,
+                        1,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 384,
+                    "byteOffset": 6469248
+                },
+                {
+                    "name": "decoder.model.4.block.2.block.3.weight_v",
+                    "shape": [
+                        96,
+                        96,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 36864,
+                    "byteOffset": 6469632
+                },
+                {
+                    "name": "decoder.model.4.block.2.block.3.bias",
+                    "shape": [
+                        96
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 384,
+                    "byteOffset": 6506496
+                },
+                {
+                    "name": "decoder.model.4.block.3.block.0.alpha",
+                    "shape": [
+                        1,
+                        96,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 384,
+                    "byteOffset": 6506880
+                },
+                {
+                    "name": "decoder.model.4.block.3.block.1.weight_g",
+                    "shape": [
+                        96,
+                        1,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 384,
+                    "byteOffset": 6507264
+                },
+                {
+                    "name": "decoder.model.4.block.3.block.1.weight_v",
+                    "shape": [
+                        96,
+                        96,
+                        7
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 258048,
+                    "byteOffset": 6507648
+                },
+                {
+                    "name": "decoder.model.4.block.3.block.1.bias",
+                    "shape": [
+                        96
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 384,
+                    "byteOffset": 6765696
+                },
+                {
+                    "name": "decoder.model.4.block.3.block.2.alpha",
+                    "shape": [
+                        1,
+                        96,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 384,
+                    "byteOffset": 6766080
+                },
+                {
+                    "name": "decoder.model.4.block.3.block.3.weight_g",
+                    "shape": [
+                        96,
+                        1,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 384,
+                    "byteOffset": 6766464
+                },
+                {
+                    "name": "decoder.model.4.block.3.block.3.weight_v",
+                    "shape": [
+                        96,
+                        96,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 36864,
+                    "byteOffset": 6766848
+                },
+                {
+                    "name": "decoder.model.4.block.3.block.3.bias",
+                    "shape": [
+                        96
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 384,
+                    "byteOffset": 6803712
+                },
+                {
+                    "name": "decoder.model.4.block.4.block.0.alpha",
+                    "shape": [
+                        1,
+                        96,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 384,
+                    "byteOffset": 6804096
+                },
+                {
+                    "name": "decoder.model.4.block.4.block.1.weight_g",
+                    "shape": [
+                        96,
+                        1,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 384,
+                    "byteOffset": 6804480
+                },
+                {
+                    "name": "decoder.model.4.block.4.block.1.weight_v",
+                    "shape": [
+                        96,
+                        96,
+                        7
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 258048,
+                    "byteOffset": 6804864
+                },
+                {
+                    "name": "decoder.model.4.block.4.block.1.bias",
+                    "shape": [
+                        96
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 384,
+                    "byteOffset": 7062912
+                },
+                {
+                    "name": "decoder.model.4.block.4.block.2.alpha",
+                    "shape": [
+                        1,
+                        96,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 384,
+                    "byteOffset": 7063296
+                },
+                {
+                    "name": "decoder.model.4.block.4.block.3.weight_g",
+                    "shape": [
+                        96,
+                        1,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 384,
+                    "byteOffset": 7063680
+                },
+                {
+                    "name": "decoder.model.4.block.4.block.3.weight_v",
+                    "shape": [
+                        96,
+                        96,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 36864,
+                    "byteOffset": 7064064
+                },
+                {
+                    "name": "decoder.model.4.block.4.block.3.bias",
+                    "shape": [
+                        96
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 384,
+                    "byteOffset": 7100928
+                },
+                {
+                    "name": "decoder.model.5.alpha",
+                    "shape": [
+                        1,
+                        96,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 384,
+                    "byteOffset": 7101312
+                },
+                {
+                    "name": "decoder.model.6.weight_g",
+                    "shape": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 4,
+                    "byteOffset": 7101696
+                },
+                {
+                    "name": "decoder.model.6.weight_v",
+                    "shape": [
+                        1,
+                        96,
+                        7
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 2688,
+                    "byteOffset": 7101700
+                },
+                {
+                    "name": "decoder.model.6.bias",
+                    "shape": [
+                        1
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 4,
+                    "byteOffset": 7104388
+                }
+            ],
+            "md5sum": "f99e6791270814b5b4a6fd9fbecaf0c3"
         }
     ]
 }

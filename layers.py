@@ -34,7 +34,7 @@ class Snake1d(nn.Module):
 
 class WNConv1d(nn.Module):
     """
-    Module for conv1d layer.
+    Module for weight norm conv1d layer.
     """
 
     def __init__(
@@ -91,3 +91,72 @@ class WNConv1d(nn.Module):
         return nn.op.conv1d(
             x, weight, self.bias, self.stride, self.padding, self.dilation, self.groups
         )
+
+
+class WNConvTranspose1d(nn.Module):
+    """
+    Module for weight norm convtranspose1d layer.
+    """
+
+    def __init__(
+        self,
+        in_channels: int,
+        out_channels: int,
+        kernel_size: int,
+        stride: int = 1,
+        padding: int = 0,
+        output_padding: int = 0,
+        dilation: int = 1,
+        groups: int = 1,
+        bias: bool = True,
+        dtype: Optional[str] = None,
+    ) -> None:
+        self.in_channels = in_channels
+        self.out_channels = out_channels
+        self.kernel_size = kernel_size
+        self.stride = stride
+        self.padding = padding
+        self.output_padding = output_padding
+        self.dilation = dilation
+        self.groups = groups
+        self.dtype = dtype
+
+        self.weight_g = nn.Parameter(
+            (
+                self.in_channels,
+                1,
+                1,
+            ),
+            dtype,
+        )
+
+        self.weight_v = nn.Parameter(
+            (
+                self.in_channels,
+                int(self.out_channels // self.groups),
+                self.kernel_size,
+            ),
+            dtype,
+        )
+        if bias:
+            self.bias = nn.Parameter((self.out_channels,), dtype)
+        else:
+            self.bias = None
+
+    def forward(self, x: nn.Tensor) -> nn.Tensor:
+        dim = [i for i in range(1, x.ndim)]
+        norm_v = _op.sqrt(
+            _op.sum(_op.square(self.weight_v._expr), axis=dim, keepdims=True),
+        )
+        weight = nn.wrap_nested(
+            self.weight_g._expr * (self.weight_v._expr / norm_v),
+            name="wnconvtranspose1d",
+        )
+        return nn.op.conv1d_transpose(
+            x, weight, self.bias, self.stride, self.padding, self.output_padding, self.dilation, self.groups
+        )
+
+
+class Tanh(nn.Module):
+    def forward(self, x: nn.Tensor) -> nn.Tensor:
+        return nn.op.tanh(x)

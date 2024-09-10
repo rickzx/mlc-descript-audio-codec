@@ -64,7 +64,7 @@ def get_tvm_module(device: Device):
 def encode(device: Device, model_weight_path: str = "weights"):
     mod, named_params = get_tvm_module(device)
     params = load_params(model_weight_path, device, named_params)
-    forward_fn = mod["forward"]
+    forward_fn = mod["encode"]
     np.random.seed(0)
     audio_data = np.random.randn(1, 1, 441000).astype("float32")
     print(audio_data)
