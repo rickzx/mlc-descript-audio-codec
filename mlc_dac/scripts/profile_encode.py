@@ -64,18 +64,18 @@ def get_tvm_module(device: Device):
 
 def start_profile(device: Device, model_weight_path: str = "weights"):
     vm, named_params = get_tvm_module(device)
-    # params = load_params(model_weight_path, device, named_params)
-    # np.random.seed(0)
-    # audio_data = np.random.randn(1, 1, 441000).astype("float32")
-    # print(audio_data)
-    # audio_data = tvm.nd.array(audio_data, device=device)
+    params = load_params(model_weight_path, device, named_params)
+    np.random.seed(0)
+    audio_data = np.random.randn(1, 1, 441000).astype("float32")
+    print(audio_data)
+    audio_data = tvm.nd.array(audio_data, device=device)
 
-    # report = vm.profile("encode", audio_data, params)
-    # csv = report.csv()
+    report = vm.profile("encode", audio_data, params)
+    csv = report.csv()
 
-    # with open("profile.csv", "w", encoding="utf-8") as f:
-    #     f.write(csv)
-    #     print("Profile saved to profile.csv")
+    with open("profile.csv", "w", encoding="utf-8") as f:
+        f.write(csv)
+        print("Profile saved to profile.csv")
 
 
 if __name__ == "__main__":
