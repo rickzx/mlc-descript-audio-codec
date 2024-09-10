@@ -4,27 +4,7 @@
         {
             "dataPath": "params_shard_0.bin",
             "format": "raw-shard",
-            "nbytes": 16777216,
-            "records": [
-                {
-                    "name": "encoder.block.4.block.4.weight_v",
-                    "shape": [
-                        1024,
-                        512,
-                        16
-                    ],
-                    "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 16777216,
-                    "byteOffset": 0
-                }
-            ],
-            "md5sum": "c4eaeb7f5436a973ef40bb73aac11c31"
-        },
-        {
-            "dataPath": "params_shard_1.bin",
-            "format": "raw-shard",
-            "nbytes": 28318240,
+            "nbytes": 26274304,
             "records": [
                 {
                     "name": "encoder.block.0.weight_g",
@@ -34,8 +14,8 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 128,
+                    "format": "raw",
+                    "nbytes": 256,
                     "byteOffset": 0
                 },
                 {
@@ -46,9 +26,9 @@
                         7
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 896,
-                    "byteOffset": 128
+                    "format": "raw",
+                    "nbytes": 1792,
+                    "byteOffset": 256
                 },
                 {
                     "name": "encoder.block.0.bias",
@@ -56,9 +36,9 @@
                         64
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 128,
-                    "byteOffset": 1024
+                    "format": "raw",
+                    "nbytes": 256,
+                    "byteOffset": 2048
                 },
                 {
                     "name": "encoder.block.1.block.0.block.0.alpha",
@@ -68,9 +48,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 128,
-                    "byteOffset": 1152
+                    "format": "raw",
+                    "nbytes": 256,
+                    "byteOffset": 2304
                 },
                 {
                     "name": "encoder.block.1.block.0.block.1.weight_g",
@@ -80,9 +60,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 128,
-                    "byteOffset": 1280
+                    "format": "raw",
+                    "nbytes": 256,
+                    "byteOffset": 2560
                 },
                 {
                     "name": "encoder.block.1.block.0.block.1.weight_v",
@@ -92,9 +72,9 @@
                         7
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 57344,
-                    "byteOffset": 1408
+                    "format": "raw",
+                    "nbytes": 114688,
+                    "byteOffset": 2816
                 },
                 {
                     "name": "encoder.block.1.block.0.block.1.bias",
@@ -102,9 +82,9 @@
                         64
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 128,
-                    "byteOffset": 58752
+                    "format": "raw",
+                    "nbytes": 256,
+                    "byteOffset": 117504
                 },
                 {
                     "name": "encoder.block.1.block.0.block.2.alpha",
@@ -114,9 +94,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 128,
-                    "byteOffset": 58880
+                    "format": "raw",
+                    "nbytes": 256,
+                    "byteOffset": 117760
                 },
                 {
                     "name": "encoder.block.1.block.0.block.3.weight_g",
@@ -126,9 +106,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 128,
-                    "byteOffset": 59008
+                    "format": "raw",
+                    "nbytes": 256,
+                    "byteOffset": 118016
                 },
                 {
                     "name": "encoder.block.1.block.0.block.3.weight_v",
@@ -138,9 +118,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 8192,
-                    "byteOffset": 59136
+                    "format": "raw",
+                    "nbytes": 16384,
+                    "byteOffset": 118272
                 },
                 {
                     "name": "encoder.block.1.block.0.block.3.bias",
@@ -148,9 +128,9 @@
                         64
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 128,
-                    "byteOffset": 67328
+                    "format": "raw",
+                    "nbytes": 256,
+                    "byteOffset": 134656
                 },
                 {
                     "name": "encoder.block.1.block.1.block.0.alpha",
@@ -160,9 +140,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 128,
-                    "byteOffset": 67456
+                    "format": "raw",
+                    "nbytes": 256,
+                    "byteOffset": 134912
                 },
                 {
                     "name": "encoder.block.1.block.1.block.1.weight_g",
@@ -172,9 +152,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 128,
-                    "byteOffset": 67584
+                    "format": "raw",
+                    "nbytes": 256,
+                    "byteOffset": 135168
                 },
                 {
                     "name": "encoder.block.1.block.1.block.1.weight_v",
@@ -184,9 +164,9 @@
                         7
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 57344,
-                    "byteOffset": 67712
+                    "format": "raw",
+                    "nbytes": 114688,
+                    "byteOffset": 135424
                 },
                 {
                     "name": "encoder.block.1.block.1.block.1.bias",
@@ -194,9 +174,9 @@
                         64
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 128,
-                    "byteOffset": 125056
+                    "format": "raw",
+                    "nbytes": 256,
+                    "byteOffset": 250112
                 },
                 {
                     "name": "encoder.block.1.block.1.block.2.alpha",
@@ -206,9 +186,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 128,
-                    "byteOffset": 125184
+                    "format": "raw",
+                    "nbytes": 256,
+                    "byteOffset": 250368
                 },
                 {
                     "name": "encoder.block.1.block.1.block.3.weight_g",
@@ -218,9 +198,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 128,
-                    "byteOffset": 125312
+                    "format": "raw",
+                    "nbytes": 256,
+                    "byteOffset": 250624
                 },
                 {
                     "name": "encoder.block.1.block.1.block.3.weight_v",
@@ -230,9 +210,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 8192,
-                    "byteOffset": 125440
+                    "format": "raw",
+                    "nbytes": 16384,
+                    "byteOffset": 250880
                 },
                 {
                     "name": "encoder.block.1.block.1.block.3.bias",
@@ -240,9 +220,9 @@
                         64
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 128,
-                    "byteOffset": 133632
+                    "format": "raw",
+                    "nbytes": 256,
+                    "byteOffset": 267264
                 },
                 {
                     "name": "encoder.block.1.block.2.block.0.alpha",
@@ -252,9 +232,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 128,
-                    "byteOffset": 133760
+                    "format": "raw",
+                    "nbytes": 256,
+                    "byteOffset": 267520
                 },
                 {
                     "name": "encoder.block.1.block.2.block.1.weight_g",
@@ -264,9 +244,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 128,
-                    "byteOffset": 133888
+                    "format": "raw",
+                    "nbytes": 256,
+                    "byteOffset": 267776
                 },
                 {
                     "name": "encoder.block.1.block.2.block.1.weight_v",
@@ -276,9 +256,9 @@
                         7
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 57344,
-                    "byteOffset": 134016
+                    "format": "raw",
+                    "nbytes": 114688,
+                    "byteOffset": 268032
                 },
                 {
                     "name": "encoder.block.1.block.2.block.1.bias",
@@ -286,9 +266,9 @@
                         64
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 128,
-                    "byteOffset": 191360
+                    "format": "raw",
+                    "nbytes": 256,
+                    "byteOffset": 382720
                 },
                 {
                     "name": "encoder.block.1.block.2.block.2.alpha",
@@ -298,9 +278,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 128,
-                    "byteOffset": 191488
+                    "format": "raw",
+                    "nbytes": 256,
+                    "byteOffset": 382976
                 },
                 {
                     "name": "encoder.block.1.block.2.block.3.weight_g",
@@ -310,9 +290,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 128,
-                    "byteOffset": 191616
+                    "format": "raw",
+                    "nbytes": 256,
+                    "byteOffset": 383232
                 },
                 {
                     "name": "encoder.block.1.block.2.block.3.weight_v",
@@ -322,9 +302,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 8192,
-                    "byteOffset": 191744
+                    "format": "raw",
+                    "nbytes": 16384,
+                    "byteOffset": 383488
                 },
                 {
                     "name": "encoder.block.1.block.2.block.3.bias",
@@ -332,9 +312,9 @@
                         64
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 128,
-                    "byteOffset": 199936
+                    "format": "raw",
+                    "nbytes": 256,
+                    "byteOffset": 399872
                 },
                 {
                     "name": "encoder.block.1.block.3.alpha",
@@ -344,9 +324,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 128,
-                    "byteOffset": 200064
+                    "format": "raw",
+                    "nbytes": 256,
+                    "byteOffset": 400128
                 },
                 {
                     "name": "encoder.block.1.block.4.weight_g",
@@ -356,9 +336,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 256,
-                    "byteOffset": 200192
+                    "format": "raw",
+                    "nbytes": 512,
+                    "byteOffset": 400384
                 },
                 {
                     "name": "encoder.block.1.block.4.weight_v",
@@ -368,9 +348,9 @@
                         4
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 65536,
-                    "byteOffset": 200448
+                    "format": "raw",
+                    "nbytes": 131072,
+                    "byteOffset": 400896
                 },
                 {
                     "name": "encoder.block.1.block.4.bias",
@@ -378,9 +358,9 @@
                         128
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 256,
-                    "byteOffset": 265984
+                    "format": "raw",
+                    "nbytes": 512,
+                    "byteOffset": 531968
                 },
                 {
                     "name": "encoder.block.2.block.0.block.0.alpha",
@@ -390,9 +370,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 256,
-                    "byteOffset": 266240
+                    "format": "raw",
+                    "nbytes": 512,
+                    "byteOffset": 532480
                 },
                 {
                     "name": "encoder.block.2.block.0.block.1.weight_g",
@@ -402,9 +382,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 256,
-                    "byteOffset": 266496
+                    "format": "raw",
+                    "nbytes": 512,
+                    "byteOffset": 532992
                 },
                 {
                     "name": "encoder.block.2.block.0.block.1.weight_v",
@@ -414,9 +394,9 @@
                         7
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 229376,
-                    "byteOffset": 266752
+                    "format": "raw",
+                    "nbytes": 458752,
+                    "byteOffset": 533504
                 },
                 {
                     "name": "encoder.block.2.block.0.block.1.bias",
@@ -424,9 +404,9 @@
                         128
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 256,
-                    "byteOffset": 496128
+                    "format": "raw",
+                    "nbytes": 512,
+                    "byteOffset": 992256
                 },
                 {
                     "name": "encoder.block.2.block.0.block.2.alpha",
@@ -436,9 +416,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 256,
-                    "byteOffset": 496384
+                    "format": "raw",
+                    "nbytes": 512,
+                    "byteOffset": 992768
                 },
                 {
                     "name": "encoder.block.2.block.0.block.3.weight_g",
@@ -448,9 +428,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 256,
-                    "byteOffset": 496640
+                    "format": "raw",
+                    "nbytes": 512,
+                    "byteOffset": 993280
                 },
                 {
                     "name": "encoder.block.2.block.0.block.3.weight_v",
@@ -460,9 +440,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 32768,
-                    "byteOffset": 496896
+                    "format": "raw",
+                    "nbytes": 65536,
+                    "byteOffset": 993792
                 },
                 {
                     "name": "encoder.block.2.block.0.block.3.bias",
@@ -470,9 +450,9 @@
                         128
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 256,
-                    "byteOffset": 529664
+                    "format": "raw",
+                    "nbytes": 512,
+                    "byteOffset": 1059328
                 },
                 {
                     "name": "encoder.block.2.block.1.block.0.alpha",
@@ -482,9 +462,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 256,
-                    "byteOffset": 529920
+                    "format": "raw",
+                    "nbytes": 512,
+                    "byteOffset": 1059840
                 },
                 {
                     "name": "encoder.block.2.block.1.block.1.weight_g",
@@ -494,9 +474,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 256,
-                    "byteOffset": 530176
+                    "format": "raw",
+                    "nbytes": 512,
+                    "byteOffset": 1060352
                 },
                 {
                     "name": "encoder.block.2.block.1.block.1.weight_v",
@@ -506,9 +486,9 @@
                         7
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 229376,
-                    "byteOffset": 530432
+                    "format": "raw",
+                    "nbytes": 458752,
+                    "byteOffset": 1060864
                 },
                 {
                     "name": "encoder.block.2.block.1.block.1.bias",
@@ -516,9 +496,9 @@
                         128
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 256,
-                    "byteOffset": 759808
+                    "format": "raw",
+                    "nbytes": 512,
+                    "byteOffset": 1519616
                 },
                 {
                     "name": "encoder.block.2.block.1.block.2.alpha",
@@ -528,9 +508,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 256,
-                    "byteOffset": 760064
+                    "format": "raw",
+                    "nbytes": 512,
+                    "byteOffset": 1520128
                 },
                 {
                     "name": "encoder.block.2.block.1.block.3.weight_g",
@@ -540,9 +520,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 256,
-                    "byteOffset": 760320
+                    "format": "raw",
+                    "nbytes": 512,
+                    "byteOffset": 1520640
                 },
                 {
                     "name": "encoder.block.2.block.1.block.3.weight_v",
@@ -552,9 +532,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 32768,
-                    "byteOffset": 760576
+                    "format": "raw",
+                    "nbytes": 65536,
+                    "byteOffset": 1521152
                 },
                 {
                     "name": "encoder.block.2.block.1.block.3.bias",
@@ -562,9 +542,9 @@
                         128
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 256,
-                    "byteOffset": 793344
+                    "format": "raw",
+                    "nbytes": 512,
+                    "byteOffset": 1586688
                 },
                 {
                     "name": "encoder.block.2.block.2.block.0.alpha",
@@ -574,9 +554,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 256,
-                    "byteOffset": 793600
+                    "format": "raw",
+                    "nbytes": 512,
+                    "byteOffset": 1587200
                 },
                 {
                     "name": "encoder.block.2.block.2.block.1.weight_g",
@@ -586,9 +566,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 256,
-                    "byteOffset": 793856
+                    "format": "raw",
+                    "nbytes": 512,
+                    "byteOffset": 1587712
                 },
                 {
                     "name": "encoder.block.2.block.2.block.1.weight_v",
@@ -598,9 +578,9 @@
                         7
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 229376,
-                    "byteOffset": 794112
+                    "format": "raw",
+                    "nbytes": 458752,
+                    "byteOffset": 1588224
                 },
                 {
                     "name": "encoder.block.2.block.2.block.1.bias",
@@ -608,9 +588,9 @@
                         128
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 256,
-                    "byteOffset": 1023488
+                    "format": "raw",
+                    "nbytes": 512,
+                    "byteOffset": 2046976
                 },
                 {
                     "name": "encoder.block.2.block.2.block.2.alpha",
@@ -620,9 +600,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 256,
-                    "byteOffset": 1023744
+                    "format": "raw",
+                    "nbytes": 512,
+                    "byteOffset": 2047488
                 },
                 {
                     "name": "encoder.block.2.block.2.block.3.weight_g",
@@ -632,9 +612,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 256,
-                    "byteOffset": 1024000
+                    "format": "raw",
+                    "nbytes": 512,
+                    "byteOffset": 2048000
                 },
                 {
                     "name": "encoder.block.2.block.2.block.3.weight_v",
@@ -644,9 +624,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 32768,
-                    "byteOffset": 1024256
+                    "format": "raw",
+                    "nbytes": 65536,
+                    "byteOffset": 2048512
                 },
                 {
                     "name": "encoder.block.2.block.2.block.3.bias",
@@ -654,9 +634,9 @@
                         128
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 256,
-                    "byteOffset": 1057024
+                    "format": "raw",
+                    "nbytes": 512,
+                    "byteOffset": 2114048
                 },
                 {
                     "name": "encoder.block.2.block.3.alpha",
@@ -666,9 +646,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 256,
-                    "byteOffset": 1057280
+                    "format": "raw",
+                    "nbytes": 512,
+                    "byteOffset": 2114560
                 },
                 {
                     "name": "encoder.block.2.block.4.weight_g",
@@ -678,9 +658,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 512,
-                    "byteOffset": 1057536
+                    "format": "raw",
+                    "nbytes": 1024,
+                    "byteOffset": 2115072
                 },
                 {
                     "name": "encoder.block.2.block.4.weight_v",
@@ -690,9 +670,9 @@
                         8
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 524288,
-                    "byteOffset": 1058048
+                    "format": "raw",
+                    "nbytes": 1048576,
+                    "byteOffset": 2116096
                 },
                 {
                     "name": "encoder.block.2.block.4.bias",
@@ -700,9 +680,9 @@
                         256
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 512,
-                    "byteOffset": 1582336
+                    "format": "raw",
+                    "nbytes": 1024,
+                    "byteOffset": 3164672
                 },
                 {
                     "name": "encoder.block.3.block.0.block.0.alpha",
@@ -712,9 +692,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 512,
-                    "byteOffset": 1582848
+                    "format": "raw",
+                    "nbytes": 1024,
+                    "byteOffset": 3165696
                 },
                 {
                     "name": "encoder.block.3.block.0.block.1.weight_g",
@@ -724,9 +704,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 512,
-                    "byteOffset": 1583360
+                    "format": "raw",
+                    "nbytes": 1024,
+                    "byteOffset": 3166720
                 },
                 {
                     "name": "encoder.block.3.block.0.block.1.weight_v",
@@ -736,9 +716,9 @@
                         7
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 917504,
-                    "byteOffset": 1583872
+                    "format": "raw",
+                    "nbytes": 1835008,
+                    "byteOffset": 3167744
                 },
                 {
                     "name": "encoder.block.3.block.0.block.1.bias",
@@ -746,9 +726,9 @@
                         256
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 512,
-                    "byteOffset": 2501376
+                    "format": "raw",
+                    "nbytes": 1024,
+                    "byteOffset": 5002752
                 },
                 {
                     "name": "encoder.block.3.block.0.block.2.alpha",
@@ -758,9 +738,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 512,
-                    "byteOffset": 2501888
+                    "format": "raw",
+                    "nbytes": 1024,
+                    "byteOffset": 5003776
                 },
                 {
                     "name": "encoder.block.3.block.0.block.3.weight_g",
@@ -770,9 +750,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 512,
-                    "byteOffset": 2502400
+                    "format": "raw",
+                    "nbytes": 1024,
+                    "byteOffset": 5004800
                 },
                 {
                     "name": "encoder.block.3.block.0.block.3.weight_v",
@@ -782,9 +762,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 131072,
-                    "byteOffset": 2502912
+                    "format": "raw",
+                    "nbytes": 262144,
+                    "byteOffset": 5005824
                 },
                 {
                     "name": "encoder.block.3.block.0.block.3.bias",
@@ -792,9 +772,9 @@
                         256
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 512,
-                    "byteOffset": 2633984
+                    "format": "raw",
+                    "nbytes": 1024,
+                    "byteOffset": 5267968
                 },
                 {
                     "name": "encoder.block.3.block.1.block.0.alpha",
@@ -804,9 +784,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 512,
-                    "byteOffset": 2634496
+                    "format": "raw",
+                    "nbytes": 1024,
+                    "byteOffset": 5268992
                 },
                 {
                     "name": "encoder.block.3.block.1.block.1.weight_g",
@@ -816,9 +796,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 512,
-                    "byteOffset": 2635008
+                    "format": "raw",
+                    "nbytes": 1024,
+                    "byteOffset": 5270016
                 },
                 {
                     "name": "encoder.block.3.block.1.block.1.weight_v",
@@ -828,9 +808,9 @@
                         7
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 917504,
-                    "byteOffset": 2635520
+                    "format": "raw",
+                    "nbytes": 1835008,
+                    "byteOffset": 5271040
                 },
                 {
                     "name": "encoder.block.3.block.1.block.1.bias",
@@ -838,9 +818,9 @@
                         256
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 512,
-                    "byteOffset": 3553024
+                    "format": "raw",
+                    "nbytes": 1024,
+                    "byteOffset": 7106048
                 },
                 {
                     "name": "encoder.block.3.block.1.block.2.alpha",
@@ -850,9 +830,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 512,
-                    "byteOffset": 3553536
+                    "format": "raw",
+                    "nbytes": 1024,
+                    "byteOffset": 7107072
                 },
                 {
                     "name": "encoder.block.3.block.1.block.3.weight_g",
@@ -862,9 +842,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 512,
-                    "byteOffset": 3554048
+                    "format": "raw",
+                    "nbytes": 1024,
+                    "byteOffset": 7108096
                 },
                 {
                     "name": "encoder.block.3.block.1.block.3.weight_v",
@@ -874,9 +854,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 131072,
-                    "byteOffset": 3554560
+                    "format": "raw",
+                    "nbytes": 262144,
+                    "byteOffset": 7109120
                 },
                 {
                     "name": "encoder.block.3.block.1.block.3.bias",
@@ -884,9 +864,9 @@
                         256
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 512,
-                    "byteOffset": 3685632
+                    "format": "raw",
+                    "nbytes": 1024,
+                    "byteOffset": 7371264
                 },
                 {
                     "name": "encoder.block.3.block.2.block.0.alpha",
@@ -896,9 +876,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 512,
-                    "byteOffset": 3686144
+                    "format": "raw",
+                    "nbytes": 1024,
+                    "byteOffset": 7372288
                 },
                 {
                     "name": "encoder.block.3.block.2.block.1.weight_g",
@@ -908,9 +888,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 512,
-                    "byteOffset": 3686656
+                    "format": "raw",
+                    "nbytes": 1024,
+                    "byteOffset": 7373312
                 },
                 {
                     "name": "encoder.block.3.block.2.block.1.weight_v",
@@ -920,9 +900,9 @@
                         7
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 917504,
-                    "byteOffset": 3687168
+                    "format": "raw",
+                    "nbytes": 1835008,
+                    "byteOffset": 7374336
                 },
                 {
                     "name": "encoder.block.3.block.2.block.1.bias",
@@ -930,9 +910,9 @@
                         256
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 512,
-                    "byteOffset": 4604672
+                    "format": "raw",
+                    "nbytes": 1024,
+                    "byteOffset": 9209344
                 },
                 {
                     "name": "encoder.block.3.block.2.block.2.alpha",
@@ -942,9 +922,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 512,
-                    "byteOffset": 4605184
+                    "format": "raw",
+                    "nbytes": 1024,
+                    "byteOffset": 9210368
                 },
                 {
                     "name": "encoder.block.3.block.2.block.3.weight_g",
@@ -954,9 +934,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 512,
-                    "byteOffset": 4605696
+                    "format": "raw",
+                    "nbytes": 1024,
+                    "byteOffset": 9211392
                 },
                 {
                     "name": "encoder.block.3.block.2.block.3.weight_v",
@@ -966,9 +946,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 131072,
-                    "byteOffset": 4606208
+                    "format": "raw",
+                    "nbytes": 262144,
+                    "byteOffset": 9212416
                 },
                 {
                     "name": "encoder.block.3.block.2.block.3.bias",
@@ -976,9 +956,9 @@
                         256
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 512,
-                    "byteOffset": 4737280
+                    "format": "raw",
+                    "nbytes": 1024,
+                    "byteOffset": 9474560
                 },
                 {
                     "name": "encoder.block.3.block.3.alpha",
@@ -988,9 +968,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 512,
-                    "byteOffset": 4737792
+                    "format": "raw",
+                    "nbytes": 1024,
+                    "byteOffset": 9475584
                 },
                 {
                     "name": "encoder.block.3.block.4.weight_g",
@@ -1000,9 +980,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 1024,
-                    "byteOffset": 4738304
+                    "format": "raw",
+                    "nbytes": 2048,
+                    "byteOffset": 9476608
                 },
                 {
                     "name": "encoder.block.3.block.4.weight_v",
@@ -1012,9 +992,9 @@
                         16
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 4194304,
-                    "byteOffset": 4739328
+                    "format": "raw",
+                    "nbytes": 8388608,
+                    "byteOffset": 9478656
                 },
                 {
                     "name": "encoder.block.3.block.4.bias",
@@ -1022,9 +1002,9 @@
                         512
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 1024,
-                    "byteOffset": 8933632
+                    "format": "raw",
+                    "nbytes": 2048,
+                    "byteOffset": 17867264
                 },
                 {
                     "name": "encoder.block.4.block.0.block.0.alpha",
@@ -1034,9 +1014,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 1024,
-                    "byteOffset": 8934656
+                    "format": "raw",
+                    "nbytes": 2048,
+                    "byteOffset": 17869312
                 },
                 {
                     "name": "encoder.block.4.block.0.block.1.weight_g",
@@ -1046,9 +1026,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 1024,
-                    "byteOffset": 8935680
+                    "format": "raw",
+                    "nbytes": 2048,
+                    "byteOffset": 17871360
                 },
                 {
                     "name": "encoder.block.4.block.0.block.1.weight_v",
@@ -1058,9 +1038,9 @@
                         7
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 3670016,
-                    "byteOffset": 8936704
+                    "format": "raw",
+                    "nbytes": 7340032,
+                    "byteOffset": 17873408
                 },
                 {
                     "name": "encoder.block.4.block.0.block.1.bias",
@@ -1068,9 +1048,9 @@
                         512
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 1024,
-                    "byteOffset": 12606720
+                    "format": "raw",
+                    "nbytes": 2048,
+                    "byteOffset": 25213440
                 },
                 {
                     "name": "encoder.block.4.block.0.block.2.alpha",
@@ -1080,9 +1060,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 1024,
-                    "byteOffset": 12607744
+                    "format": "raw",
+                    "nbytes": 2048,
+                    "byteOffset": 25215488
                 },
                 {
                     "name": "encoder.block.4.block.0.block.3.weight_g",
@@ -1092,9 +1072,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 1024,
-                    "byteOffset": 12608768
+                    "format": "raw",
+                    "nbytes": 2048,
+                    "byteOffset": 25217536
                 },
                 {
                     "name": "encoder.block.4.block.0.block.3.weight_v",
@@ -1104,9 +1084,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 524288,
-                    "byteOffset": 12609792
+                    "format": "raw",
+                    "nbytes": 1048576,
+                    "byteOffset": 25219584
                 },
                 {
                     "name": "encoder.block.4.block.0.block.3.bias",
@@ -1114,9 +1094,9 @@
                         512
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 1024,
-                    "byteOffset": 13134080
+                    "format": "raw",
+                    "nbytes": 2048,
+                    "byteOffset": 26268160
                 },
                 {
                     "name": "encoder.block.4.block.1.block.0.alpha",
@@ -1126,9 +1106,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 1024,
-                    "byteOffset": 13135104
+                    "format": "raw",
+                    "nbytes": 2048,
+                    "byteOffset": 26270208
                 },
                 {
                     "name": "encoder.block.4.block.1.block.1.weight_g",
@@ -1138,10 +1118,38 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 1024,
-                    "byteOffset": 13136128
-                },
+                    "format": "raw",
+                    "nbytes": 2048,
+                    "byteOffset": 26272256
+                }
+            ],
+            "md5sum": "b4cdbde0652f7897a39cafef86c9b471"
+        },
+        {
+            "dataPath": "params_shard_1.bin",
+            "format": "raw-shard",
+            "nbytes": 33554432,
+            "records": [
+                {
+                    "name": "encoder.block.4.block.4.weight_v",
+                    "shape": [
+                        1024,
+                        512,
+                        16
+                    ],
+                    "dtype": "float32",
+                    "format": "raw",
+                    "nbytes": 33554432,
+                    "byteOffset": 0
+                }
+            ],
+            "md5sum": "bd8adbade04c7a7d55cd45a86377e69d"
+        },
+        {
+            "dataPath": "params_shard_2.bin",
+            "format": "raw-shard",
+            "nbytes": 30362176,
+            "records": [
                 {
                     "name": "encoder.block.4.block.1.block.1.weight_v",
                     "shape": [
@@ -1150,9 +1158,9 @@
                         7
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 3670016,
-                    "byteOffset": 13137152
+                    "format": "raw",
+                    "nbytes": 7340032,
+                    "byteOffset": 0
                 },
                 {
                     "name": "encoder.block.4.block.1.block.1.bias",
@@ -1160,9 +1168,9 @@
                         512
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 1024,
-                    "byteOffset": 16807168
+                    "format": "raw",
+                    "nbytes": 2048,
+                    "byteOffset": 7340032
                 },
                 {
                     "name": "encoder.block.4.block.1.block.2.alpha",
@@ -1172,9 +1180,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 1024,
-                    "byteOffset": 16808192
+                    "format": "raw",
+                    "nbytes": 2048,
+                    "byteOffset": 7342080
                 },
                 {
                     "name": "encoder.block.4.block.1.block.3.weight_g",
@@ -1184,9 +1192,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 1024,
-                    "byteOffset": 16809216
+                    "format": "raw",
+                    "nbytes": 2048,
+                    "byteOffset": 7344128
                 },
                 {
                     "name": "encoder.block.4.block.1.block.3.weight_v",
@@ -1196,9 +1204,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 524288,
-                    "byteOffset": 16810240
+                    "format": "raw",
+                    "nbytes": 1048576,
+                    "byteOffset": 7346176
                 },
                 {
                     "name": "encoder.block.4.block.1.block.3.bias",
@@ -1206,9 +1214,9 @@
                         512
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 1024,
-                    "byteOffset": 17334528
+                    "format": "raw",
+                    "nbytes": 2048,
+                    "byteOffset": 8394752
                 },
                 {
                     "name": "encoder.block.4.block.2.block.0.alpha",
@@ -1218,9 +1226,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 1024,
-                    "byteOffset": 17335552
+                    "format": "raw",
+                    "nbytes": 2048,
+                    "byteOffset": 8396800
                 },
                 {
                     "name": "encoder.block.4.block.2.block.1.weight_g",
@@ -1230,9 +1238,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 1024,
-                    "byteOffset": 17336576
+                    "format": "raw",
+                    "nbytes": 2048,
+                    "byteOffset": 8398848
                 },
                 {
                     "name": "encoder.block.4.block.2.block.1.weight_v",
@@ -1242,9 +1250,9 @@
                         7
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 3670016,
-                    "byteOffset": 17337600
+                    "format": "raw",
+                    "nbytes": 7340032,
+                    "byteOffset": 8400896
                 },
                 {
                     "name": "encoder.block.4.block.2.block.1.bias",
@@ -1252,9 +1260,9 @@
                         512
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 1024,
-                    "byteOffset": 21007616
+                    "format": "raw",
+                    "nbytes": 2048,
+                    "byteOffset": 15740928
                 },
                 {
                     "name": "encoder.block.4.block.2.block.2.alpha",
@@ -1264,9 +1272,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 1024,
-                    "byteOffset": 21008640
+                    "format": "raw",
+                    "nbytes": 2048,
+                    "byteOffset": 15742976
                 },
                 {
                     "name": "encoder.block.4.block.2.block.3.weight_g",
@@ -1276,9 +1284,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 1024,
-                    "byteOffset": 21009664
+                    "format": "raw",
+                    "nbytes": 2048,
+                    "byteOffset": 15745024
                 },
                 {
                     "name": "encoder.block.4.block.2.block.3.weight_v",
@@ -1288,9 +1296,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 524288,
-                    "byteOffset": 21010688
+                    "format": "raw",
+                    "nbytes": 1048576,
+                    "byteOffset": 15747072
                 },
                 {
                     "name": "encoder.block.4.block.2.block.3.bias",
@@ -1298,9 +1306,9 @@
                         512
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 1024,
-                    "byteOffset": 21534976
+                    "format": "raw",
+                    "nbytes": 2048,
+                    "byteOffset": 16795648
                 },
                 {
                     "name": "encoder.block.4.block.3.alpha",
@@ -1310,9 +1318,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 1024,
-                    "byteOffset": 21536000
+                    "format": "raw",
+                    "nbytes": 2048,
+                    "byteOffset": 16797696
                 },
                 {
                     "name": "encoder.block.4.block.4.weight_g",
@@ -1322,9 +1330,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 2048,
-                    "byteOffset": 21537024
+                    "format": "raw",
+                    "nbytes": 4096,
+                    "byteOffset": 16799744
                 },
                 {
                     "name": "encoder.block.4.block.4.bias",
@@ -1332,9 +1340,9 @@
                         1024
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 2048,
-                    "byteOffset": 21539072
+                    "format": "raw",
+                    "nbytes": 4096,
+                    "byteOffset": 16803840
                 },
                 {
                     "name": "encoder.block.5.alpha",
@@ -1344,9 +1352,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 2048,
-                    "byteOffset": 21541120
+                    "format": "raw",
+                    "nbytes": 4096,
+                    "byteOffset": 16807936
                 },
                 {
                     "name": "encoder.block.6.weight_g",
@@ -1356,9 +1364,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 2048,
-                    "byteOffset": 21543168
+                    "format": "raw",
+                    "nbytes": 4096,
+                    "byteOffset": 16812032
                 },
                 {
                     "name": "encoder.block.6.weight_v",
@@ -1368,9 +1376,9 @@
                         3
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 6291456,
-                    "byteOffset": 21545216
+                    "format": "raw",
+                    "nbytes": 12582912,
+                    "byteOffset": 16816128
                 },
                 {
                     "name": "encoder.block.6.bias",
@@ -1378,9 +1386,9 @@
                         1024
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 2048,
-                    "byteOffset": 27836672
+                    "format": "raw",
+                    "nbytes": 4096,
+                    "byteOffset": 29399040
                 },
                 {
                     "name": "quantizer.quantizers.0.in_proj.weight_g",
@@ -1390,9 +1398,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 16,
-                    "byteOffset": 27838720
+                    "format": "raw",
+                    "nbytes": 32,
+                    "byteOffset": 29403136
                 },
                 {
                     "name": "quantizer.quantizers.0.in_proj.weight_v",
@@ -1402,9 +1410,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 16384,
-                    "byteOffset": 27838736
+                    "format": "raw",
+                    "nbytes": 32768,
+                    "byteOffset": 29403168
                 },
                 {
                     "name": "quantizer.quantizers.0.in_proj.bias",
@@ -1412,9 +1420,9 @@
                         8
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 16,
-                    "byteOffset": 27855120
+                    "format": "raw",
+                    "nbytes": 32,
+                    "byteOffset": 29435936
                 },
                 {
                     "name": "quantizer.quantizers.0.out_proj.weight_g",
@@ -1424,9 +1432,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 2048,
-                    "byteOffset": 27855136
+                    "format": "raw",
+                    "nbytes": 4096,
+                    "byteOffset": 29435968
                 },
                 {
                     "name": "quantizer.quantizers.0.out_proj.weight_v",
@@ -1436,9 +1444,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 16384,
-                    "byteOffset": 27857184
+                    "format": "raw",
+                    "nbytes": 32768,
+                    "byteOffset": 29440064
                 },
                 {
                     "name": "quantizer.quantizers.0.out_proj.bias",
@@ -1446,9 +1454,9 @@
                         1024
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 2048,
-                    "byteOffset": 27873568
+                    "format": "raw",
+                    "nbytes": 4096,
+                    "byteOffset": 29472832
                 },
                 {
                     "name": "quantizer.quantizers.0.codebook.weight",
@@ -1457,9 +1465,9 @@
                         8
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 16384,
-                    "byteOffset": 27875616
+                    "format": "raw",
+                    "nbytes": 32768,
+                    "byteOffset": 29476928
                 },
                 {
                     "name": "quantizer.quantizers.1.in_proj.weight_g",
@@ -1469,9 +1477,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 16,
-                    "byteOffset": 27892000
+                    "format": "raw",
+                    "nbytes": 32,
+                    "byteOffset": 29509696
                 },
                 {
                     "name": "quantizer.quantizers.1.in_proj.weight_v",
@@ -1481,9 +1489,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 16384,
-                    "byteOffset": 27892016
+                    "format": "raw",
+                    "nbytes": 32768,
+                    "byteOffset": 29509728
                 },
                 {
                     "name": "quantizer.quantizers.1.in_proj.bias",
@@ -1491,9 +1499,9 @@
                         8
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 16,
-                    "byteOffset": 27908400
+                    "format": "raw",
+                    "nbytes": 32,
+                    "byteOffset": 29542496
                 },
                 {
                     "name": "quantizer.quantizers.1.out_proj.weight_g",
@@ -1503,9 +1511,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 2048,
-                    "byteOffset": 27908416
+                    "format": "raw",
+                    "nbytes": 4096,
+                    "byteOffset": 29542528
                 },
                 {
                     "name": "quantizer.quantizers.1.out_proj.weight_v",
@@ -1515,9 +1523,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 16384,
-                    "byteOffset": 27910464
+                    "format": "raw",
+                    "nbytes": 32768,
+                    "byteOffset": 29546624
                 },
                 {
                     "name": "quantizer.quantizers.1.out_proj.bias",
@@ -1525,9 +1533,9 @@
                         1024
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 2048,
-                    "byteOffset": 27926848
+                    "format": "raw",
+                    "nbytes": 4096,
+                    "byteOffset": 29579392
                 },
                 {
                     "name": "quantizer.quantizers.1.codebook.weight",
@@ -1536,9 +1544,9 @@
                         8
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 16384,
-                    "byteOffset": 27928896
+                    "format": "raw",
+                    "nbytes": 32768,
+                    "byteOffset": 29583488
                 },
                 {
                     "name": "quantizer.quantizers.2.in_proj.weight_g",
@@ -1548,9 +1556,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 16,
-                    "byteOffset": 27945280
+                    "format": "raw",
+                    "nbytes": 32,
+                    "byteOffset": 29616256
                 },
                 {
                     "name": "quantizer.quantizers.2.in_proj.weight_v",
@@ -1560,9 +1568,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 16384,
-                    "byteOffset": 27945296
+                    "format": "raw",
+                    "nbytes": 32768,
+                    "byteOffset": 29616288
                 },
                 {
                     "name": "quantizer.quantizers.2.in_proj.bias",
@@ -1570,9 +1578,9 @@
                         8
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 16,
-                    "byteOffset": 27961680
+                    "format": "raw",
+                    "nbytes": 32,
+                    "byteOffset": 29649056
                 },
                 {
                     "name": "quantizer.quantizers.2.out_proj.weight_g",
@@ -1582,9 +1590,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 2048,
-                    "byteOffset": 27961696
+                    "format": "raw",
+                    "nbytes": 4096,
+                    "byteOffset": 29649088
                 },
                 {
                     "name": "quantizer.quantizers.2.out_proj.weight_v",
@@ -1594,9 +1602,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 16384,
-                    "byteOffset": 27963744
+                    "format": "raw",
+                    "nbytes": 32768,
+                    "byteOffset": 29653184
                 },
                 {
                     "name": "quantizer.quantizers.2.out_proj.bias",
@@ -1604,9 +1612,9 @@
                         1024
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 2048,
-                    "byteOffset": 27980128
+                    "format": "raw",
+                    "nbytes": 4096,
+                    "byteOffset": 29685952
                 },
                 {
                     "name": "quantizer.quantizers.2.codebook.weight",
@@ -1615,9 +1623,9 @@
                         8
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 16384,
-                    "byteOffset": 27982176
+                    "format": "raw",
+                    "nbytes": 32768,
+                    "byteOffset": 29690048
                 },
                 {
                     "name": "quantizer.quantizers.3.in_proj.weight_g",
@@ -1627,9 +1635,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 16,
-                    "byteOffset": 27998560
+                    "format": "raw",
+                    "nbytes": 32,
+                    "byteOffset": 29722816
                 },
                 {
                     "name": "quantizer.quantizers.3.in_proj.weight_v",
@@ -1639,9 +1647,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 16384,
-                    "byteOffset": 27998576
+                    "format": "raw",
+                    "nbytes": 32768,
+                    "byteOffset": 29722848
                 },
                 {
                     "name": "quantizer.quantizers.3.in_proj.bias",
@@ -1649,9 +1657,9 @@
                         8
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 16,
-                    "byteOffset": 28014960
+                    "format": "raw",
+                    "nbytes": 32,
+                    "byteOffset": 29755616
                 },
                 {
                     "name": "quantizer.quantizers.3.out_proj.weight_g",
@@ -1661,9 +1669,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 2048,
-                    "byteOffset": 28014976
+                    "format": "raw",
+                    "nbytes": 4096,
+                    "byteOffset": 29755648
                 },
                 {
                     "name": "quantizer.quantizers.3.out_proj.weight_v",
@@ -1673,9 +1681,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 16384,
-                    "byteOffset": 28017024
+                    "format": "raw",
+                    "nbytes": 32768,
+                    "byteOffset": 29759744
                 },
                 {
                     "name": "quantizer.quantizers.3.out_proj.bias",
@@ -1683,9 +1691,9 @@
                         1024
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 2048,
-                    "byteOffset": 28033408
+                    "format": "raw",
+                    "nbytes": 4096,
+                    "byteOffset": 29792512
                 },
                 {
                     "name": "quantizer.quantizers.3.codebook.weight",
@@ -1694,9 +1702,9 @@
                         8
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 16384,
-                    "byteOffset": 28035456
+                    "format": "raw",
+                    "nbytes": 32768,
+                    "byteOffset": 29796608
                 },
                 {
                     "name": "quantizer.quantizers.4.in_proj.weight_g",
@@ -1706,9 +1714,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 16,
-                    "byteOffset": 28051840
+                    "format": "raw",
+                    "nbytes": 32,
+                    "byteOffset": 29829376
                 },
                 {
                     "name": "quantizer.quantizers.4.in_proj.weight_v",
@@ -1718,9 +1726,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 16384,
-                    "byteOffset": 28051856
+                    "format": "raw",
+                    "nbytes": 32768,
+                    "byteOffset": 29829408
                 },
                 {
                     "name": "quantizer.quantizers.4.in_proj.bias",
@@ -1728,9 +1736,9 @@
                         8
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 16,
-                    "byteOffset": 28068240
+                    "format": "raw",
+                    "nbytes": 32,
+                    "byteOffset": 29862176
                 },
                 {
                     "name": "quantizer.quantizers.4.out_proj.weight_g",
@@ -1740,9 +1748,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 2048,
-                    "byteOffset": 28068256
+                    "format": "raw",
+                    "nbytes": 4096,
+                    "byteOffset": 29862208
                 },
                 {
                     "name": "quantizer.quantizers.4.out_proj.weight_v",
@@ -1752,9 +1760,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 16384,
-                    "byteOffset": 28070304
+                    "format": "raw",
+                    "nbytes": 32768,
+                    "byteOffset": 29866304
                 },
                 {
                     "name": "quantizer.quantizers.4.out_proj.bias",
@@ -1762,9 +1770,9 @@
                         1024
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 2048,
-                    "byteOffset": 28086688
+                    "format": "raw",
+                    "nbytes": 4096,
+                    "byteOffset": 29899072
                 },
                 {
                     "name": "quantizer.quantizers.4.codebook.weight",
@@ -1773,9 +1781,9 @@
                         8
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 16384,
-                    "byteOffset": 28088736
+                    "format": "raw",
+                    "nbytes": 32768,
+                    "byteOffset": 29903168
                 },
                 {
                     "name": "quantizer.quantizers.5.in_proj.weight_g",
@@ -1785,9 +1793,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 16,
-                    "byteOffset": 28105120
+                    "format": "raw",
+                    "nbytes": 32,
+                    "byteOffset": 29935936
                 },
                 {
                     "name": "quantizer.quantizers.5.in_proj.weight_v",
@@ -1797,9 +1805,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 16384,
-                    "byteOffset": 28105136
+                    "format": "raw",
+                    "nbytes": 32768,
+                    "byteOffset": 29935968
                 },
                 {
                     "name": "quantizer.quantizers.5.in_proj.bias",
@@ -1807,9 +1815,9 @@
                         8
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 16,
-                    "byteOffset": 28121520
+                    "format": "raw",
+                    "nbytes": 32,
+                    "byteOffset": 29968736
                 },
                 {
                     "name": "quantizer.quantizers.5.out_proj.weight_g",
@@ -1819,9 +1827,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 2048,
-                    "byteOffset": 28121536
+                    "format": "raw",
+                    "nbytes": 4096,
+                    "byteOffset": 29968768
                 },
                 {
                     "name": "quantizer.quantizers.5.out_proj.weight_v",
@@ -1831,9 +1839,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 16384,
-                    "byteOffset": 28123584
+                    "format": "raw",
+                    "nbytes": 32768,
+                    "byteOffset": 29972864
                 },
                 {
                     "name": "quantizer.quantizers.5.out_proj.bias",
@@ -1841,9 +1849,9 @@
                         1024
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 2048,
-                    "byteOffset": 28139968
+                    "format": "raw",
+                    "nbytes": 4096,
+                    "byteOffset": 30005632
                 },
                 {
                     "name": "quantizer.quantizers.5.codebook.weight",
@@ -1852,9 +1860,9 @@
                         8
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 16384,
-                    "byteOffset": 28142016
+                    "format": "raw",
+                    "nbytes": 32768,
+                    "byteOffset": 30009728
                 },
                 {
                     "name": "quantizer.quantizers.6.in_proj.weight_g",
@@ -1864,9 +1872,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 16,
-                    "byteOffset": 28158400
+                    "format": "raw",
+                    "nbytes": 32,
+                    "byteOffset": 30042496
                 },
                 {
                     "name": "quantizer.quantizers.6.in_proj.weight_v",
@@ -1876,9 +1884,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 16384,
-                    "byteOffset": 28158416
+                    "format": "raw",
+                    "nbytes": 32768,
+                    "byteOffset": 30042528
                 },
                 {
                     "name": "quantizer.quantizers.6.in_proj.bias",
@@ -1886,9 +1894,9 @@
                         8
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 16,
-                    "byteOffset": 28174800
+                    "format": "raw",
+                    "nbytes": 32,
+                    "byteOffset": 30075296
                 },
                 {
                     "name": "quantizer.quantizers.6.out_proj.weight_g",
@@ -1898,9 +1906,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 2048,
-                    "byteOffset": 28174816
+                    "format": "raw",
+                    "nbytes": 4096,
+                    "byteOffset": 30075328
                 },
                 {
                     "name": "quantizer.quantizers.6.out_proj.weight_v",
@@ -1910,9 +1918,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 16384,
-                    "byteOffset": 28176864
+                    "format": "raw",
+                    "nbytes": 32768,
+                    "byteOffset": 30079424
                 },
                 {
                     "name": "quantizer.quantizers.6.out_proj.bias",
@@ -1920,9 +1928,9 @@
                         1024
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 2048,
-                    "byteOffset": 28193248
+                    "format": "raw",
+                    "nbytes": 4096,
+                    "byteOffset": 30112192
                 },
                 {
                     "name": "quantizer.quantizers.6.codebook.weight",
@@ -1931,9 +1939,9 @@
                         8
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 16384,
-                    "byteOffset": 28195296
+                    "format": "raw",
+                    "nbytes": 32768,
+                    "byteOffset": 30116288
                 },
                 {
                     "name": "quantizer.quantizers.7.in_proj.weight_g",
@@ -1943,9 +1951,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 16,
-                    "byteOffset": 28211680
+                    "format": "raw",
+                    "nbytes": 32,
+                    "byteOffset": 30149056
                 },
                 {
                     "name": "quantizer.quantizers.7.in_proj.weight_v",
@@ -1955,9 +1963,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 16384,
-                    "byteOffset": 28211696
+                    "format": "raw",
+                    "nbytes": 32768,
+                    "byteOffset": 30149088
                 },
                 {
                     "name": "quantizer.quantizers.7.in_proj.bias",
@@ -1965,9 +1973,9 @@
                         8
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 16,
-                    "byteOffset": 28228080
+                    "format": "raw",
+                    "nbytes": 32,
+                    "byteOffset": 30181856
                 },
                 {
                     "name": "quantizer.quantizers.7.out_proj.weight_g",
@@ -1977,9 +1985,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 2048,
-                    "byteOffset": 28228096
+                    "format": "raw",
+                    "nbytes": 4096,
+                    "byteOffset": 30181888
                 },
                 {
                     "name": "quantizer.quantizers.7.out_proj.weight_v",
@@ -1989,9 +1997,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 16384,
-                    "byteOffset": 28230144
+                    "format": "raw",
+                    "nbytes": 32768,
+                    "byteOffset": 30185984
                 },
                 {
                     "name": "quantizer.quantizers.7.out_proj.bias",
@@ -1999,9 +2007,9 @@
                         1024
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 2048,
-                    "byteOffset": 28246528
+                    "format": "raw",
+                    "nbytes": 4096,
+                    "byteOffset": 30218752
                 },
                 {
                     "name": "quantizer.quantizers.7.codebook.weight",
@@ -2010,9 +2018,9 @@
                         8
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 16384,
-                    "byteOffset": 28248576
+                    "format": "raw",
+                    "nbytes": 32768,
+                    "byteOffset": 30222848
                 },
                 {
                     "name": "quantizer.quantizers.8.in_proj.weight_g",
@@ -2022,9 +2030,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 16,
-                    "byteOffset": 28264960
+                    "format": "raw",
+                    "nbytes": 32,
+                    "byteOffset": 30255616
                 },
                 {
                     "name": "quantizer.quantizers.8.in_proj.weight_v",
@@ -2034,9 +2042,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 16384,
-                    "byteOffset": 28264976
+                    "format": "raw",
+                    "nbytes": 32768,
+                    "byteOffset": 30255648
                 },
                 {
                     "name": "quantizer.quantizers.8.in_proj.bias",
@@ -2044,9 +2052,9 @@
                         8
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 16,
-                    "byteOffset": 28281360
+                    "format": "raw",
+                    "nbytes": 32,
+                    "byteOffset": 30288416
                 },
                 {
                     "name": "quantizer.quantizers.8.out_proj.weight_g",
@@ -2056,9 +2064,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 2048,
-                    "byteOffset": 28281376
+                    "format": "raw",
+                    "nbytes": 4096,
+                    "byteOffset": 30288448
                 },
                 {
                     "name": "quantizer.quantizers.8.out_proj.weight_v",
@@ -2068,9 +2076,9 @@
                         1
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 16384,
-                    "byteOffset": 28283424
+                    "format": "raw",
+                    "nbytes": 32768,
+                    "byteOffset": 30292544
                 },
                 {
                     "name": "quantizer.quantizers.8.out_proj.bias",
@@ -2078,9 +2086,9 @@
                         1024
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 2048,
-                    "byteOffset": 28299808
+                    "format": "raw",
+                    "nbytes": 4096,
+                    "byteOffset": 30325312
                 },
                 {
                     "name": "quantizer.quantizers.8.codebook.weight",
@@ -2089,12 +2097,12 @@
                         8
                     ],
                     "dtype": "float32",
-                    "format": "f32-to-bf16",
-                    "nbytes": 16384,
-                    "byteOffset": 28301856
+                    "format": "raw",
+                    "nbytes": 32768,
+                    "byteOffset": 30329408
                 }
             ],
-            "md5sum": "8aa72719b9edd9f9eec61df31a85a2f3"
+            "md5sum": "13f0693c6669de28b645224b0b278706"
         }
     ]
 }

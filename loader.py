@@ -23,6 +23,7 @@ class DACLoader:
         tvmjs.dump_ndarray_cache(
             self.load(device),
             "weights",
+            encode_format="raw",
         )
 
     def load(self, device: Device):

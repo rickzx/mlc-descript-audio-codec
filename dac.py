@@ -128,7 +128,7 @@ class DAC(nn.Module):
                 "audio_data": nn.spec.Tensor(["batch_size", 1, "seq_len"], "float32"),
                 "$": {
                     "param_mode": "packed",
-                    "effect_mode": "none",
+                    "effect_mode": "plain",
                 },
             }
         }
