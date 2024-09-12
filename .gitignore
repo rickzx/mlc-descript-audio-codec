@@ -1,2 +1,11 @@
 *.pth
+*.pyc
+*.pyo
+*.pyd
+*.swp
+*.log
+*.bak
+*.cache
+*.egg-info
+*.egg
 __pycache__

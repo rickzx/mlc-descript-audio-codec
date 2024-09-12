@@ -1,0 +1,7 @@
+Argument Shapes,Count,Device,Duration (us),Name,Percent
+"float32[1, 128, 220500]",1,"metal0",12891.8,"vm.builtin.check_tensor_info",51.5807
+"float32[1, 128, 220500]",1,"metal0",113.125,"vm.builtin.match_shape",0.452618
+"float32[128, 128, 7], float32[128, 1, 1]",1,"metal0",262.5,"fused_tir_square_sum",1.05027
+"float32[128, 1, 1], float32[128, 128, 7], float32[128, 1, 1], float32[128, 128, 7]",1,"metal0",226.667,"fused_tir_sqrt_divide_multiply",0.906904
+"float32[128]",1,"metal0",73.125,"vm.builtin.reshape",0.292576
+"float32[1, 128, 220500], float32[128, 128, 7], float32[1, 128, 1], float32[1, 128, 220500]",1,"metal0",11290.4,"fused_conv1d_add",45.1734
