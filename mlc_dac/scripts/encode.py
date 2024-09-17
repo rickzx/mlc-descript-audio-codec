@@ -30,7 +30,7 @@ def load_params(
 
 
 def get_tvm_module(device: Device):
-    model = DAC(debug=True)
+    model = DAC()
     mod, named_params, _ = model.export_tvm(
         spec=model.get_default_spec(),
         allow_extern=True,
@@ -69,10 +69,9 @@ def encode(device: Device, model_weight_path: str = "weights"):
     audio_data = np.random.randn(1, 1, 441000).astype("float32")
     print(audio_data)
     audio_data = tvm.nd.array(audio_data, device=device)
-    effects = mod["_initialize_effect"]()
 
     begin = time.time()
-    z, codes = forward_fn(audio_data, *effects, params)[0]
+    z, codes = forward_fn(audio_data, params)
     end = time.time()
     print("Time elapsed: ", end - begin)
     codes = map(lambda x: x.numpy(), codes)
