@@ -66,7 +66,7 @@ def encode(device: Device, model_weight_path: str = "weights"):
     params = load_params(model_weight_path, device, named_params)
     forward_fn = mod["encode"]
     np.random.seed(0)
-    audio_data = np.random.randn(1, 1, 441000).astype("float32")
+    audio_data = np.random.randn(2, 1, 441000).astype("float32")
     print(audio_data)
     audio_data = tvm.nd.array(audio_data, device=device)
 

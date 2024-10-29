@@ -66,7 +66,7 @@ def decode(device: Device, model_weight_path: str = "weights"):
     params = load_params(model_weight_path, device, named_params)
     forward_fn = mod["decode"]
     np.random.seed(0)
-    codes = np.random.randn(1, 1024, 400).astype("float32")
+    codes = np.random.randn(1, 1024, 891).astype("float32")
     print(codes)
     codes = tvm.nd.array(codes, device=device)
     effects = mod["_initialize_effect"]()
