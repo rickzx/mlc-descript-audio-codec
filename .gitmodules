@@ -1,0 +1,3 @@
+[submodule "streaming-descript-audio-codec"]
+	path = streaming-descript-audio-codec
+	url = https://github.com/rickzx/streaming-descript-audio-codec.git
