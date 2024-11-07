@@ -30,7 +30,7 @@ def load_params(
 
 
 def get_tvm_module(device: Device):
-    model = DAC(debug=True)
+    model = DAC()
     mod, named_params, _ = model.export_tvm(
         spec=model.get_default_spec(),
         allow_extern=True,

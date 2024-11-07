@@ -25,12 +25,15 @@ def load_params(
 
     plist = []
     for param_name in param_names:
+        param_name = param_name.replace(".layers.", ".")
+        param_name = param_name.replace(".branches.0.", ".")
         plist.append(params[param_name])
     return plist
 
 
 def get_tvm_module(device: Device):
     model = DAC()
+    cumulative_delay = model.encoder_cumulative_delay
     mod, named_params, _ = model.export_tvm(
         spec=model.get_default_spec(),
         allow_extern=True,
@@ -58,25 +61,26 @@ def get_tvm_module(device: Device):
     ex = relax.build(mod, target)
 
     vm = relax.VirtualMachine(ex, device)
-    return vm.module, named_params
+    return vm.module, named_params, cumulative_delay
 
 
 def encode(device: Device, model_weight_path: str = "weights"):
-    mod, named_params = get_tvm_module(device)
+    mod, named_params, delay = get_tvm_module(device)
     params = load_params(model_weight_path, device, named_params)
     forward_fn = mod["encode"]
     np.random.seed(0)
-    audio_data = np.random.randn(2, 1, 441000).astype("float32")
+    audio_data = np.random.randn(1, 1, 512000).astype("float32")
     print(audio_data)
     audio_data = tvm.nd.array(audio_data, device=device)
+    effects = mod["_initialize_effect"]()
 
     begin = time.time()
-    z, codes = forward_fn(audio_data, params)
+    z, codes = forward_fn(audio_data, *effects, params)[0]
     end = time.time()
     print("Time elapsed: ", end - begin)
     codes = map(lambda x: x.numpy(), codes)
     codes = np.stack(list(codes), axis=1)
-    return z.numpy(), codes
+    return z.numpy()[..., delay:], codes[..., delay:]
 
 if __name__ == "__main__":
     device = tvm.metal()

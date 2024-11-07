@@ -4,51 +4,84 @@ from typing import List, Union
 import numpy as np
 from tvm.relax.frontend import nn
 
-from mlc_dac.layers import Snake1d, Tanh, WNConv1d, WNConvTranspose1d
+from mlc_dac.layers import (
+    AlignBranches,
+    CachedSequential,
+    CachedWNConv1d,
+    CachedWNConvTranspose1d,
+    Identity,
+    Snake1d,
+    Tanh,
+)
 from mlc_dac.quantize import ResidualVectorQuantize
 
 
 class ResidualUnit(nn.Module):
-    def __init__(self, dim: int = 16, dilation: int = 1):
+    def __init__(self, dim: int = 16, dilation: int = 1, cumulative_delay: int = 0):
         pad = ((7 - 1) * dilation) // 2
-        self.block = nn.ModuleList(
-            [
-                Snake1d(dim),
-                WNConv1d(dim, dim, kernel_size=7, dilation=dilation, padding=pad),
-                Snake1d(dim),
-                WNConv1d(dim, dim, kernel_size=1),
-            ]
+
+        block = []
+        block.append(Snake1d(dim))
+        block.append(
+            CachedWNConv1d(
+                dim,
+                dim,
+                kernel_size=7,
+                dilation=dilation,
+                padding=pad,
+                cumulative_delay=cumulative_delay,
+            )
         )
+        block.append(Snake1d(dim))
+        block.append(
+            CachedWNConv1d(
+                dim, dim, kernel_size=1, cumulative_delay=block[-2].cumulative_delay
+            )
+        )
+        block = CachedSequential(*block)
+        self.block = AlignBranches(
+            block,
+            Identity(),
+            delays=[block.cumulative_delay, cumulative_delay],
+        )
+        self.cumulative_delay = self.block.cumulative_delay
 
     def forward(self, x: nn.Tensor):
-        residual = x
-        for layer in self.block:
-            x = layer(x)
-        return x + residual
+        return sum(self.block(x))
 
 
 class EncoderBlock(nn.Module):
-    def __init__(self, dim: int = 16, stride: int = 1):
-        self.block = nn.ModuleList(
-            [
-                ResidualUnit(dim // 2, dilation=1),
-                ResidualUnit(dim // 2, dilation=3),
-                ResidualUnit(dim // 2, dilation=9),
-                Snake1d(dim // 2),
-                WNConv1d(
-                    dim // 2,
-                    dim,
-                    kernel_size=2 * stride,
-                    stride=stride,
-                    padding=math.ceil(stride / 2),
-                ),
-            ]
+    def __init__(self, dim: int = 16, stride: int = 1, cumulative_delay: int = 0):
+        block = []
+        block.append(
+            ResidualUnit(dim // 2, dilation=1, cumulative_delay=cumulative_delay)
         )
+        block.append(
+            ResidualUnit(
+                dim // 2, dilation=3, cumulative_delay=block[-1].cumulative_delay
+            )
+        )
+        block.append(
+            ResidualUnit(
+                dim // 2, dilation=9, cumulative_delay=block[-1].cumulative_delay
+            )
+        )
+        block.append(Snake1d(dim // 2))
+        block.append(
+            CachedWNConv1d(
+                dim // 2,
+                dim,
+                kernel_size=2 * stride,
+                stride=stride,
+                padding=math.ceil(stride / 2),
+                cumulative_delay=block[-2].cumulative_delay,
+            )
+        )
+        self.block = CachedSequential(*block)
+        self.cumulative_delay = self.block.cumulative_delay
 
     def forward(self, x):
-        for layer in self.block:
-            x = layer(x)
-        return x
+        return self.block(x)
 
 
 class Encoder(nn.Module):
@@ -59,49 +92,93 @@ class Encoder(nn.Module):
         d_latent: int = 64,
     ):
 
-        self.block = [WNConv1d(1, d_model, kernel_size=7, padding=3)]
+        self.block = [CachedWNConv1d(1, d_model, kernel_size=7, padding=3)]
 
         for stride in strides:
             d_model *= 2
-            self.block += [EncoderBlock(d_model, stride=stride)]
+            self.block += [
+                EncoderBlock(
+                    d_model,
+                    stride=stride,
+                    cumulative_delay=self.block[-1].cumulative_delay,
+                )
+            ]
 
         # Create last convolution
         self.block += [
             Snake1d(d_model),
-            WNConv1d(d_model, d_latent, kernel_size=3, padding=1),
+            CachedWNConv1d(
+                d_model,
+                d_latent,
+                kernel_size=3,
+                padding=1,
+                cumulative_delay=self.block[-1].cumulative_delay,
+            ),
         ]
 
         # Wrap black into nn.Sequential
-        self.block = nn.ModuleList(self.block)
+        self.block = CachedSequential(*self.block)
+        self.cumulative_delay = self.block.cumulative_delay
 
     def forward(self, x):
-        for layer in self.block:
-            x = layer(x)
-        return x
+        return self.block(x)
 
 
 class DecoderBlock(nn.Module):
-    def __init__(self, input_dim: int = 16, output_dim: int = 8, stride: int = 1):
-        self.block = nn.ModuleList(
-            [
-                Snake1d(input_dim),
-                WNConvTranspose1d(
-                    input_dim,
-                    output_dim,
-                    kernel_size=2 * stride,
-                    stride=stride,
-                    padding=math.ceil(stride / 2),
-                ),
-                ResidualUnit(output_dim, dilation=1),
-                ResidualUnit(output_dim, dilation=3),
-                ResidualUnit(output_dim, dilation=9),
-            ]
+    def __init__(
+        self,
+        input_dim: int = 16,
+        output_dim: int = 8,
+        stride: int = 1,
+        cumulative_delay: int = 0,
+    ):
+        # self.block = nn.ModuleList(
+        #     [
+        #         Snake1d(input_dim),
+        #         WNConvTranspose1d(
+        #             input_dim,
+        #             output_dim,
+        #             kernel_size=2 * stride,
+        #             stride=stride,
+        #             padding=math.ceil(stride / 2),
+        #         ),
+        #         ResidualUnit(output_dim, dilation=1),
+        #         ResidualUnit(output_dim, dilation=3),
+        #         ResidualUnit(output_dim, dilation=9),
+        #     ]
+        # )
+        block = []
+        block.append(Snake1d(input_dim))
+        block.append(
+            CachedWNConvTranspose1d(
+                input_dim,
+                output_dim,
+                kernel_size=2 * stride,
+                stride=stride,
+                padding=math.ceil(stride / 2),
+                cumulative_delay=cumulative_delay,
+            )
         )
+        block.append(
+            ResidualUnit(
+                output_dim, dilation=1, cumulative_delay=block[-1].cumulative_delay
+            )
+        )
+        block.append(
+            ResidualUnit(
+                output_dim, dilation=3, cumulative_delay=block[-1].cumulative_delay
+            )
+        )
+        block.append(
+            ResidualUnit(
+                output_dim, dilation=9, cumulative_delay=block[-1].cumulative_delay
+            )
+        )
+        self.block = CachedSequential(*block)
+        self.cumulative_delay = self.block.cumulative_delay
 
     def forward(self, x):
-        for layer in self.block:
-            x = layer(x)
-        return x
+        return self.block(x)
 
 
 class Decoder(nn.Module):
@@ -112,27 +189,39 @@ class Decoder(nn.Module):
         rates,
         d_out: int = 1,
     ):
-        layers = [WNConv1d(input_channel, channels, kernel_size=7, padding=3)]
+        layers = [CachedWNConv1d(input_channel, channels, kernel_size=7, padding=3)]
 
         # Add upsampling + MRF blocks
         for i, stride in enumerate(rates):
             input_dim = channels // 2**i
             output_dim = channels // 2 ** (i + 1)
-            layers += [DecoderBlock(input_dim, output_dim, stride)]
+            layers += [
+                DecoderBlock(
+                    input_dim,
+                    output_dim,
+                    stride,
+                    cumulative_delay=layers[-1].cumulative_delay,
+                )
+            ]
 
         # Add final conv layer
         layers += [
             Snake1d(output_dim),
-            WNConv1d(output_dim, d_out, kernel_size=7, padding=3),
+            CachedWNConv1d(
+                output_dim,
+                d_out,
+                kernel_size=7,
+                padding=3,
+                cumulative_delay=layers[-1].cumulative_delay,
+            ),
             Tanh(),
         ]
 
-        self.model = nn.ModuleList(layers)
+        self.model = CachedSequential(*layers)
+        self.cumulative_delay = self.model.cumulative_delay
 
     def forward(self, x):
-        for layer in self.model:
-            x = layer(x)
-        return x
+        return self.model(x)
 
 
 class DAC(nn.Module):
@@ -148,14 +237,13 @@ class DAC(nn.Module):
         codebook_dim: Union[int, list] = 8,
         quantizer_dropout: bool = False,
         sample_rate: int = 44100,
-        debug: bool = False,
     ):
         self.encoder_dim = encoder_dim
         self.encoder_rates = encoder_rates
         self.decoder_dim = decoder_dim
         self.decoder_rates = decoder_rates
         self.sample_rate = sample_rate
-        self.effect_mode = "plain" if debug else "none"
+        self.effect_mode = "plain"
 
         if latent_dim is None:
             latent_dim = encoder_dim * (2 ** len(encoder_rates))
@@ -163,6 +251,7 @@ class DAC(nn.Module):
         self.latent_dim = latent_dim
 
         self.encoder = Encoder(encoder_dim, encoder_rates, latent_dim)
+        self.encoder_cumulative_delay = self.encoder.cumulative_delay
 
         self.n_codebooks = n_codebooks
         self.codebook_size = codebook_size
@@ -180,6 +269,7 @@ class DAC(nn.Module):
             decoder_dim,
             decoder_rates,
         )
+        self.decoder_cumulative_delay = self.decoder.cumulative_delay
 
         self.hop_length = np.prod(encoder_rates)
 
@@ -198,13 +288,6 @@ class DAC(nn.Module):
 
     def get_default_spec(self):
         mod_spec = {
-            "forward": {
-                "audio_data": nn.spec.Tensor(["batch_size", 1, "seq_len"], "float32"),
-                "$": {
-                    "param_mode": "packed",
-                    "effect_mode": self.effect_mode,
-                },
-            },
             "encode": {
                 "audio_data": nn.spec.Tensor(["batch_size", 1, "seq_len"], "float32"),
                 "$": {
@@ -212,15 +295,15 @@ class DAC(nn.Module):
                     "effect_mode": self.effect_mode,
                 },
             },
-            "decode": {
-                "z": nn.spec.Tensor(
-                    ["batch_size", self.latent_dim, "seq_len"], "float32"
-                ),
-                "$": {
-                    "param_mode": "packed",
-                    "effect_mode": self.effect_mode,
-                },
-            },
+            # "decode": {
+            #     "z": nn.spec.Tensor(
+            #         ["batch_size", self.latent_dim, "seq_len"], "float32"
+            #     ),
+            #     "$": {
+            #         "param_mode": "packed",
+            #         "effect_mode": self.effect_mode,
+            #     },
+            # },
         }
 
         return nn.spec.ModuleSpec.from_raw(mod_spec, self)
