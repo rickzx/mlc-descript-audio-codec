@@ -25,6 +25,8 @@ def load_params(
 
     plist = []
     for param_name in param_names:
+        param_name = param_name.replace(".layers.", ".")
+        param_name = param_name.replace(".branches.0.", ".")
         plist.append(params[param_name])
     return plist
 
