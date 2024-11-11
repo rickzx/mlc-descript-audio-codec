@@ -1,7 +1,6 @@
 import math
 from typing import List, Union
 
-import numpy as np
 from tvm.relax.frontend import nn
 
 from mlc_dac.layers import (
@@ -132,21 +131,6 @@ class DecoderBlock(nn.Module):
         stride: int = 1,
         cumulative_delay: int = 0,
     ):
-        # self.block = nn.ModuleList(
-        #     [
-        #         Snake1d(input_dim),
-        #         WNConvTranspose1d(
-        #             input_dim,
-        #             output_dim,
-        #             kernel_size=2 * stride,
-        #             stride=stride,
-        #             padding=math.ceil(stride / 2),
-        #         ),
-        #         ResidualUnit(output_dim, dilation=1),
-        #         ResidualUnit(output_dim, dilation=3),
-        #         ResidualUnit(output_dim, dilation=9),
-        #     ]
-        # )
         block = []
         block.append(Snake1d(input_dim))
         block.append(
@@ -227,6 +211,7 @@ class Decoder(nn.Module):
 class DAC(nn.Module):
     def __init__(
         self,
+        input_chunk_size,
         encoder_dim: int = 64,
         encoder_rates: List[int] = [2, 4, 8, 8],
         latent_dim: int = None,
@@ -238,6 +223,10 @@ class DAC(nn.Module):
         quantizer_dropout: bool = False,
         sample_rate: int = 44100,
     ):
+        self.input_chunk_size = input_chunk_size
+        self.hop_length = math.prod(encoder_rates)
+        self.output_length = input_chunk_size // self.hop_length
+
         self.encoder_dim = encoder_dim
         self.encoder_rates = encoder_rates
         self.decoder_dim = decoder_dim
@@ -271,8 +260,6 @@ class DAC(nn.Module):
         )
         self.decoder_cumulative_delay = self.decoder.cumulative_delay
 
-        self.hop_length = np.prod(encoder_rates)
-
     def encode(self, audio_data):
         z = self.encoder(audio_data)
         z, codes = self.quantizer(z)
@@ -289,21 +276,23 @@ class DAC(nn.Module):
     def get_default_spec(self):
         mod_spec = {
             "encode": {
-                "audio_data": nn.spec.Tensor(["batch_size", 1, "seq_len"], "float32"),
+                "audio_data": nn.spec.Tensor(
+                    ["batch_size", 1, self.input_chunk_size], "float32"
+                ),
                 "$": {
                     "param_mode": "packed",
                     "effect_mode": self.effect_mode,
                 },
             },
-            # "decode": {
-            #     "z": nn.spec.Tensor(
-            #         ["batch_size", self.latent_dim, "seq_len"], "float32"
-            #     ),
-            #     "$": {
-            #         "param_mode": "packed",
-            #         "effect_mode": self.effect_mode,
-            #     },
-            # },
+            "decode": {
+                "z": nn.spec.Tensor(
+                    ["batch_size", self.latent_dim, self.output_length], "float32"
+                ),
+                "$": {
+                    "param_mode": "packed",
+                    "effect_mode": self.effect_mode,
+                },
+            },
         }
 
         return nn.spec.ModuleSpec.from_raw(mod_spec, self)

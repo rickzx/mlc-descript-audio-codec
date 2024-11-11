@@ -23,15 +23,18 @@ def load_params(
 
     plist = []
     for param_name in param_names:
+        param_name = param_name.replace(".layers.", ".")
+        param_name = param_name.replace(".branches.0.", ".")
         plist.append(params[param_name])
     return plist
 
 
 def get_tvm_module(device: Device):
-    model = DAC()
+    model = DAC(input_chunk_size=512)
     mod, named_params, _ = model.export_tvm(
         spec=model.get_default_spec(),
         allow_extern=True,
+        debug=True,
     )
     seq = tvm.transform.Sequential(
         [
@@ -41,7 +44,7 @@ def get_tvm_module(device: Device):
             tvm.relax.transform.FuseOps(),
             tvm.relax.transform.FuseTIR(),
             dl.ApplyDefaultSchedule(
-                # dl.gpu.Matmul(),
+                dl.gpu.Matmul(),
                 dl.gpu.GEMV(),
                 dl.gpu.Reduction(),
                 dl.gpu.GeneralReduction(),
@@ -66,14 +69,20 @@ def start_profile(device: Device, model_weight_path: str = "weights"):
     vm, named_params = get_tvm_module(device)
     params = load_params(model_weight_path, device, named_params)
     np.random.seed(0)
-    audio_data = np.random.randn(1, 1, 441000).astype("float32")
+    audio_data = np.random.randn(1, 1, 512).astype("float32")
     print(audio_data)
     audio_data = tvm.nd.array(audio_data, device=device)
+    
+    mod = vm.module
+    effects = mod["_initialize_effect"]()
 
-    report = vm.profile("encode", audio_data, params)
+    report = vm.profile("encode", audio_data, *effects, params)
+    time_eval = vm.time_evaluator("encode", device, 10, 5)(audio_data, *effects, params)
+    print(time_eval)
+
     csv = report.csv()
 
-    with open("profile.csv", "w", encoding="utf-8") as f:
+    with open("profile_stream.csv", "w", encoding="utf-8") as f:
         f.write(csv)
         print("Profile saved to profile.csv")
 

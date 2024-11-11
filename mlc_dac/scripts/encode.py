@@ -16,6 +16,8 @@ from tvm.target import Target
 from mlc_dac.dac import DAC
 import time
 
+CHUNK_SIZE = 512
+
 
 def load_params(
     model_weight_path: str, device: Device, named_params: List[Tuple[str, Parameter]]
@@ -31,8 +33,8 @@ def load_params(
     return plist
 
 
-def get_tvm_module(device: Device):
-    model = DAC()
+def get_tvm_module(device: Device, input_chunk_size: int):
+    model = DAC(input_chunk_size=input_chunk_size)
     cumulative_delay = model.encoder_cumulative_delay
     mod, named_params, _ = model.export_tvm(
         spec=model.get_default_spec(),
@@ -47,7 +49,7 @@ def get_tvm_module(device: Device):
             tvm.relax.transform.FuseOps(),
             tvm.relax.transform.FuseTIR(),
             dl.ApplyDefaultSchedule(
-                # dl.gpu.Matmul(),
+                dl.gpu.Matmul(),
                 dl.gpu.GEMV(),
                 dl.gpu.Reduction(),
                 dl.gpu.GeneralReduction(),
@@ -65,22 +67,33 @@ def get_tvm_module(device: Device):
 
 
 def encode(device: Device, model_weight_path: str = "weights"):
-    mod, named_params, delay = get_tvm_module(device)
+    mod, named_params, delay = get_tvm_module(device, CHUNK_SIZE)
     params = load_params(model_weight_path, device, named_params)
     forward_fn = mod["encode"]
     np.random.seed(0)
     audio_data = np.random.randn(1, 1, 512000).astype("float32")
     print(audio_data)
-    audio_data = tvm.nd.array(audio_data, device=device)
+
+    z = []
+    codes = []
+
     effects = mod["_initialize_effect"]()
 
-    begin = time.time()
-    z, codes = forward_fn(audio_data, *effects, params)[0]
-    end = time.time()
-    print("Time elapsed: ", end - begin)
-    codes = map(lambda x: x.numpy(), codes)
-    codes = np.stack(list(codes), axis=1)
-    return z.numpy()[..., delay:], codes[..., delay:]
+    for i in range(0, 512000, CHUNK_SIZE):
+        audio_data_chunk = audio_data[:, :, i : i + CHUNK_SIZE]
+        audio_data_chunk = tvm.nd.array(audio_data_chunk, device=device)
+
+        res, effects = forward_fn(audio_data_chunk, *effects, params)
+        z_chunk, codes_chunk = res
+        z.append(z_chunk.numpy())
+        codes_chunk = map(lambda x: x.numpy(), codes_chunk)
+        codes_chunk = np.stack(list(codes_chunk), axis=1)
+        codes.append(codes_chunk)
+
+    z = np.concatenate(z, axis=-1)
+    codes = np.concatenate(codes, axis=-1)
+    return z[..., delay:], codes[..., delay:]
+
 
 if __name__ == "__main__":
     device = tvm.metal()
