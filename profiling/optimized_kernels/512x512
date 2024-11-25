@@ -1,0 +1,190 @@
+# from tvm.script import ir as I
+# from tvm.script import tir as T
+# from tvm.script import relax as R
+
+@I.ir_module
+class Module:
+    @T.prim_func
+    def cached_padding_1d_crop(var_x: T.handle, var_res: T.handle):
+        T.func_attr({"op_pattern": 0})
+        b, c, out = T.int32(), T.int32(), T.int32()
+        x = T.match_buffer(var_x, (b, c, out))
+        n = T.int32()
+        res = T.match_buffer(var_res, (b, c, n))
+        # with T.block("root"):
+        for bb, cc, nn in T.grid(b, c, n):
+            with T.block("res_crop"):
+                vb, vc, vn = T.axis.remap("SSS", [bb, cc, nn])
+                T.reads(x[vb, vc, vn])
+                T.writes(res[vb, vc, vn])
+                res[vb, vc, vn] = x[vb, vc, vn]
+
+    @T.prim_func
+    def cached_padding_1d_init(var_cache: T.handle):
+        T.func_attr({"op_pattern": 0})
+        b, c, p = T.int32(), T.int32(), T.int32()
+        cache = T.match_buffer(var_cache, (b, c, p))
+        # with T.block("root"):
+        for bb, cc, pp in T.grid(b, c, p):
+            with T.block("cache_init"):
+                vb, vc, vp = T.axis.remap("SSS", [bb, cc, pp])
+                T.reads()
+                T.writes(cache[vb, vc, vp])
+                cache[vb, vc, vp] = T.float32(0.0)
+
+    @T.prim_func
+    def cached_padding_1d_update(var_cache: T.handle, var_data: T.handle, var_res: T.handle):
+        T.func_attr({"op_pattern": 8})
+        B, c, p = T.int32(), T.int32(), T.int32()
+        cache = T.match_buffer(var_cache, (B, c, p))
+        b, n = T.int32(), T.int32()
+        data = T.match_buffer(var_data, (b, c, n))
+        out = T.int32()
+        res = T.match_buffer(var_res, (b, c, out))
+        # with T.block("root"):
+        for bb, cc, oo in T.grid(b, c, out):
+            with T.block("res_update"):
+                vb, vc, vo = T.axis.remap("SSS", [bb, cc, oo])
+                T.reads(cache[vb, vc, vo], data[vb, vc, vo - p])
+                T.writes(res[vb, vc, vo])
+                res[vb, vc, vo] = T.if_then_else(vo < p, cache[vb, vc, vo], data[vb, vc, vo - p])
+        for bb, cc, pp in T.grid(b, c, p):
+            with T.block("cache_update"):
+                vb, vc, vp = T.axis.remap("SSS", [bb, cc, pp])
+                T.reads(res[vb, vc, out - p + vp])
+                T.writes(cache[vb, vc, vp])
+                cache[vb, vc, vp] = res[vb, vc, out - p + vp]
+
+    @T.prim_func(private=True)
+    def fused_conv1d_add(lv2: T.Buffer((T.int64(1), T.int64(512), T.int64(62)), "float32"), wnconv1d: T.Buffer((T.int64(512), T.int64(512), T.int64(7)), "float32"), lv8: T.Buffer((T.int64(1), T.int64(512), T.int64(1)), "float32"), T_add_intermediate: T.Buffer((T.int64(1), T.int64(512), T.int64(8)), "float32")):
+        T.func_attr({"tir.is_scheduled": T.bool(True), "tir.noalias": T.bool(True)})
+        # with T.block("root"):
+        conv1d_ncw_intermediate_local = T.alloc_buffer((T.int64(1), T.int64(512), T.int64(8)), scope="local")
+        pad_temp_shared = T.alloc_buffer((T.int64(1), T.int64(512), T.int64(62)), scope="shared")
+        wnconv1d_shared = T.alloc_buffer((T.int64(512), T.int64(512), T.int64(7)), scope="shared")
+        for nn_0_ff_0_yy_0_fused in T.thread_binding(T.int64(64), thread="blockIdx.x", annotations={"pragma_auto_unroll_max_step": 64, "pragma_unroll_explicit": 1}):
+            for nn_1_ff_1_yy_1_fused in T.thread_binding(T.int64(1), thread="vthread.x"):
+                for nn_2_ff_2_yy_2_fused in T.thread_binding(T.int64(64), thread="threadIdx.x"):
+                    for nn_3_init, ff_3_init, yy_3_init, nn_4_init, ff_4_init, yy_4_init in T.grid(T.int64(1), T.int64(1), T.int64(1), T.int64(1), T.int64(1), T.int64(1)):
+                        with T.block("conv1d_ncw_init"):
+                            v_nn = T.axis.spatial(T.int64(1), nn_3_init + nn_4_init)
+                            v_ff = T.axis.spatial(T.int64(512), nn_0_ff_0_yy_0_fused * T.int64(8) + nn_2_ff_2_yy_2_fused // T.int64(8) + ff_3_init + ff_4_init)
+                            v_yy = T.axis.spatial(T.int64(8), nn_2_ff_2_yy_2_fused % T.int64(8) + yy_3_init + yy_4_init)
+                            T.reads()
+                            T.writes(conv1d_ncw_intermediate_local[v_nn, v_ff, v_yy])
+                            T.block_attr({"meta_schedule.thread_extent_high_inclusive": 1024, "meta_schedule.thread_extent_low_inclusive": 32, "meta_schedule.tiling_structure": "SSSRRSRS"})
+                            conv1d_ncw_intermediate_local[v_nn, v_ff, v_yy] = T.float32(0.0)
+                    for rc_0, ry_0 in T.grid(T.int64(8), T.int64(1)):
+                        for ax0_ax1_ax2_fused_0 in range(T.int64(16)):
+                            for ax0_ax1_ax2_fused_1 in T.thread_binding(T.int64(64), thread="threadIdx.x"):
+                                for ax0_ax1_ax2_fused_2 in T.vectorized(T.int64(4)):
+                                    with T.block("pad_temp_shared"):
+                                        v0 = T.axis.spatial(T.int64(1), T.int64(0))
+                                        v1 = T.axis.spatial(T.int64(512), rc_0 * T.int64(64) + (ax0_ax1_ax2_fused_0 * T.int64(256) + ax0_ax1_ax2_fused_1 * T.int64(4) + ax0_ax1_ax2_fused_2) // T.int64(62))
+                                        v2 = T.axis.spatial(T.int64(62), (ax0_ax1_ax2_fused_0 * T.int64(256) + ax0_ax1_ax2_fused_1 * T.int64(4) + ax0_ax1_ax2_fused_2) % T.int64(62))
+                                        T.where((ax0_ax1_ax2_fused_0 * T.int64(64) + ax0_ax1_ax2_fused_1) * T.int64(4) + ax0_ax1_ax2_fused_2 < T.int64(3968))
+                                        T.reads(lv2[v0, v1, v2])
+                                        T.writes(pad_temp_shared[v0, v1, v2])
+                                        pad_temp_shared[v0, v1, v2] = lv2[v0, v1, v2]
+                        for ax0_ax1_ax2_fused_0 in range(T.int64(56)):
+                            for ax0_ax1_ax2_fused_1 in T.thread_binding(T.int64(64), thread="threadIdx.x"):
+                                with T.block("wnconv1d_shared"):
+                                    v0 = T.axis.spatial(T.int64(512), nn_0_ff_0_yy_0_fused * T.int64(8) + (ax0_ax1_ax2_fused_0 * T.int64(64) + ax0_ax1_ax2_fused_1) // T.int64(448))
+                                    v1 = T.axis.spatial(T.int64(512), rc_0 * T.int64(64) + (ax0_ax1_ax2_fused_0 * T.int64(64) + ax0_ax1_ax2_fused_1) % T.int64(448) // T.int64(7))
+                                    v2 = T.axis.spatial(T.int64(7), (ax0_ax1_ax2_fused_0 * T.int64(64) + ax0_ax1_ax2_fused_1) % T.int64(7))
+                                    T.reads(wnconv1d[v0, v1, v2])
+                                    T.writes(wnconv1d_shared[v0, v1, v2])
+                                    wnconv1d_shared[v0, v1, v2] = wnconv1d[v0, v1, v2]
+                        for rc_1, ry_1, nn_3, ff_3, yy_3, rc_2, ry_2, nn_4, ff_4, yy_4 in T.grid(T.int64(16), T.int64(1), T.int64(1), T.int64(1), T.int64(1), T.int64(4), T.int64(7), T.int64(1), T.int64(1), T.int64(1)):
+                            with T.block("conv1d_ncw_update"):
+                                v_nn = T.axis.spatial(T.int64(1), nn_3 + nn_4)
+                                v_ff = T.axis.spatial(T.int64(512), nn_0_ff_0_yy_0_fused * T.int64(8) + nn_2_ff_2_yy_2_fused // T.int64(8) + ff_3 + ff_4)
+                                v_yy = T.axis.spatial(T.int64(8), nn_2_ff_2_yy_2_fused % T.int64(8) + yy_3 + yy_4)
+                                v_rc = T.axis.reduce(T.int64(512), rc_0 * T.int64(64) + rc_1 * T.int64(4) + rc_2)
+                                v_ry = T.axis.reduce(T.int64(7), ry_0 * T.int64(7) + ry_1 * T.int64(7) + ry_2)
+                                T.reads(conv1d_ncw_intermediate_local[v_nn, v_ff, v_yy], pad_temp_shared[v_nn, v_rc, v_ry * T.int64(9) + v_yy], wnconv1d_shared[v_ff, v_rc, v_ry])
+                                T.writes(conv1d_ncw_intermediate_local[v_nn, v_ff, v_yy])
+                                T.block_attr({"meta_schedule.thread_extent_high_inclusive": 1024, "meta_schedule.thread_extent_low_inclusive": 32, "meta_schedule.tiling_structure": "SSSRRSRS"})
+                                conv1d_ncw_intermediate_local[v_nn, v_ff, v_yy] = conv1d_ncw_intermediate_local[v_nn, v_ff, v_yy] + pad_temp_shared[v_nn, v_rc, v_ry * T.int64(9) + v_yy] * wnconv1d_shared[v_ff, v_rc, v_ry]
+                    for ax0, ax1, ax2 in T.grid(T.int64(1), T.int64(1), T.int64(1)):
+                        with T.block("conv1d_ncw_intermediate_local"):
+                            v0 = T.axis.spatial(T.int64(1), ax0)
+                            v1 = T.axis.spatial(T.int64(512), nn_0_ff_0_yy_0_fused * T.int64(8) + nn_2_ff_2_yy_2_fused // T.int64(8) + ax1)
+                            v2 = T.axis.spatial(T.int64(8), nn_2_ff_2_yy_2_fused % T.int64(8) + ax2)
+                            T.reads(conv1d_ncw_intermediate_local[v0, v1, v2], lv8[v0, v1, T.int64(0)])
+                            T.writes(T_add_intermediate[v0, v1, v2])
+                            T_add_intermediate[v0, v1, v2] = conv1d_ncw_intermediate_local[v0, v1, v2] + lv8[v0, v1, T.int64(0)]
+
+    @T.prim_func(private=True)
+    def fused_tir_sqrt_divide_multiply(lv4: T.Buffer((T.int64(512), T.int64(1), T.int64(1)), "float32"), weight_v: T.Buffer((T.int64(512), T.int64(512), T.int64(7)), "float32"), weight_g: T.Buffer((T.int64(512), T.int64(1), T.int64(1)), "float32"), T_multiply_intermediate: T.Buffer((T.int64(512), T.int64(512), T.int64(7)), "float32")):
+        T.func_attr({"tir.is_scheduled": T.bool(True), "tir.noalias": T.bool(True)})
+        # with T.block("root"):
+        for ax0_ax1_ax2_fused_1 in T.thread_binding(T.int64(256), thread="blockIdx.x"):
+            for ax0_ax1_ax2_fused_2 in T.thread_binding(T.int64(1024), thread="threadIdx.x"):
+                for ax0_ax1_ax2_fused_0 in range(T.int64(7)):
+                    with T.block("T_divide"):
+                        v_ax0 = T.axis.spatial(T.int64(512), (ax0_ax1_ax2_fused_0 * T.int64(262144) + ax0_ax1_ax2_fused_1 * T.int64(1024) + ax0_ax1_ax2_fused_2) // T.int64(3584))
+                        v_ax1 = T.axis.spatial(T.int64(512), (ax0_ax1_ax2_fused_0 * T.int64(262144) + ax0_ax1_ax2_fused_1 * T.int64(1024) + ax0_ax1_ax2_fused_2) % T.int64(3584) // T.int64(7))
+                        v_ax2 = T.axis.spatial(T.int64(7), (ax0_ax1_ax2_fused_0 * T.int64(262144) + ax0_ax1_ax2_fused_1 * T.int64(1024) + ax0_ax1_ax2_fused_2) % T.int64(7))
+                        T.reads(weight_g[v_ax0, T.int64(0), T.int64(0)], weight_v[v_ax0, v_ax1, v_ax2], lv4[v_ax0, T.int64(0), T.int64(0)])
+                        T.writes(T_multiply_intermediate[v_ax0, v_ax1, v_ax2])
+                        T_multiply_intermediate[v_ax0, v_ax1, v_ax2] = weight_g[v_ax0, T.int64(0), T.int64(0)] * (weight_v[v_ax0, v_ax1, v_ax2] / T.sqrt(lv4[v_ax0, T.int64(0), T.int64(0)]))
+
+    @T.prim_func(private=True)
+    def fused_tir_square_sum(weight_v: T.Buffer((T.int64(512), T.int64(512), T.int64(7)), "float32"), lv3_red_intermediate: T.Buffer((T.int64(512), T.int64(1), T.int64(1)), "float32")):
+        T.func_attr({"tir.is_scheduled": T.bool(True), "tir.noalias": T.bool(True)})
+        # with T.block("root"):
+        for ax0_ax1_ax2_fused in T.thread_binding(T.int64(512), thread="blockIdx.x", annotations={"pragma_auto_unroll_max_step": 512, "pragma_unroll_explicit": 1}):
+            for k1_k2_fused_0 in range(T.int64(112)):
+                for k1_k2_fused_1 in T.thread_binding(T.int64(32), thread="threadIdx.x"):
+                    with T.block("lv3_red"):
+                        v_ax0 = T.axis.spatial(T.int64(512), ax0_ax1_ax2_fused)
+                        v_ax1 = T.axis.spatial(T.int64(1), T.int64(0))
+                        v_ax2 = T.axis.spatial(T.int64(1), T.int64(0))
+                        v_k1 = T.axis.reduce(T.int64(512), (k1_k2_fused_0 * T.int64(32) + k1_k2_fused_1) // T.int64(7))
+                        v_k2 = T.axis.reduce(T.int64(7), (k1_k2_fused_0 * T.int64(32) + k1_k2_fused_1) % T.int64(7))
+                        T.reads(weight_v[v_ax0, v_k1, v_k2])
+                        T.writes(lv3_red_intermediate[v_ax0, v_ax1, v_ax2])
+                        with T.init():
+                            lv3_red_intermediate[v_ax0, v_ax1, v_ax2] = T.float32(0.0)
+                        lv3_red_intermediate[v_ax0, v_ax1, v_ax2] = lv3_red_intermediate[v_ax0, v_ax1, v_ax2] + weight_v[v_ax0, v_k1, v_k2] * weight_v[v_ax0, v_k1, v_k2]
+
+    @T.prim_func(private=True)
+    def reshape(bias: T.Buffer((T.int64(512),), "float32"), T_reshape: T.Buffer((T.int64(1), T.int64(512), T.int64(1)), "float32")):
+        T.func_attr({"op_pattern": 2, "tir.is_scheduled": T.bool(True), "tir.noalias": T.bool(True)})
+        # with T.block("root"):
+        for ax0_ax1_ax2_fused_0 in T.thread_binding(T.int64(2), thread="blockIdx.x"):
+            for ax0_ax1_ax2_fused_1 in T.thread_binding(T.int64(256), thread="threadIdx.x"):
+                with T.block("T_reshape"):
+                    v_ax0 = T.axis.spatial(T.int64(1), T.int64(0))
+                    v_ax1 = T.axis.spatial(T.int64(512), ax0_ax1_ax2_fused_0 * T.int64(256) + ax0_ax1_ax2_fused_1)
+                    v_ax2 = T.axis.spatial(T.int64(1), T.int64(0))
+                    T.reads(bias[(v_ax1 + v_ax2) % T.int64(512)])
+                    T.writes(T_reshape[v_ax0, v_ax1, v_ax2])
+                    T_reshape[v_ax0, v_ax1, v_ax2] = bias[(v_ax1 + v_ax2) % T.int64(512)]
+
+    @R.function
+    def _initialize_effect() -> R.Tuple(R.Object, R.Object, R.Object):
+        cls = Module
+        with R.dataflow():
+            _io: R.Object = R.null_value()
+            cache_cache: R.Object = R.call_pure_packed("vm.builtin.cached_padding_1d_create", R.prim_value(0), R.prim_value(0), R.prim_value(32), R.prim_value(0), cls.cached_padding_1d_init, cls.cached_padding_1d_update, cls.cached_padding_1d_crop, sinfo_args=(R.Object,))
+            downsampling_delay_cache: R.Object = R.call_pure_packed("vm.builtin.cached_padding_1d_create", R.prim_value(0), R.prim_value(1), R.prim_value(32), R.prim_value(0), cls.cached_padding_1d_init, cls.cached_padding_1d_update, cls.cached_padding_1d_crop, sinfo_args=(R.Object,))
+            gv: R.Tuple(R.Object, R.Object, R.Object) = _io, cache_cache, downsampling_delay_cache
+            R.output(gv)
+        return gv
+
+    @R.function
+    def forward(x: R.Tensor((1, 512, 62), dtype="float32"), _io: R.Object, cache_cache: R.Object, downsampling_delay_cache: R.Object, weight_g: R.Tensor((512, 1, 1), dtype="float32"), weight_v: R.Tensor((512, 512, 7), dtype="float32"), bias: R.Tensor((512,), dtype="float32")) -> R.Tuple(R.Tensor((1, 512, 8), dtype="float32"), R.Tuple(R.Object, R.Object, R.Object)):
+        R.func_attr({"num_input": 4})
+        cls = Module
+        with R.dataflow():
+            lv1: R.Tensor((1, 512, 62), dtype="float32") = R.call_pure_packed("vm.builtin.cached_padding_1d_update", downsampling_delay_cache, x, sinfo_args=(R.Tensor((1, 512, 62), dtype="float32"),))
+            lv2: R.Tensor((1, 512, 62), dtype="float32") = R.call_pure_packed("vm.builtin.cached_padding_1d_update", cache_cache, lv1, sinfo_args=(R.Tensor((1, 512, 62), dtype="float32"),))
+            lv = R.call_tir(cls.fused_tir_square_sum, (weight_v,), out_sinfo=R.Tensor((512, 1, 1), dtype="float32"))
+            lv1_1 = R.call_tir(cls.fused_tir_sqrt_divide_multiply, (lv, weight_v, weight_g), out_sinfo=R.Tensor((512, 512, 7), dtype="float32"))
+            lv8 = R.call_tir(cls.reshape, (bias,), out_sinfo=R.Tensor((1, 512, 1), dtype="float32"))
+            lv2_1 = R.call_tir(cls.fused_conv1d_add, (lv2, lv1_1, lv8), out_sinfo=R.Tensor((1, 512, 8), dtype="float32"))
+            gv1: R.Tuple(R.Tensor((1, 512, 8), dtype="float32"), R.Tuple(R.Object, R.Object, R.Object)) = lv2_1, (_io, cache_cache, downsampling_delay_cache)
+            R.output(gv1)
+        return gv1

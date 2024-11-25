@@ -212,6 +212,7 @@ class DAC(nn.Module):
     def __init__(
         self,
         input_chunk_size,
+        batch_size: int = 1,
         encoder_dim: int = 64,
         encoder_rates: List[int] = [2, 4, 8, 8],
         latent_dim: int = None,
@@ -224,6 +225,7 @@ class DAC(nn.Module):
         sample_rate: int = 44100,
     ):
         self.input_chunk_size = input_chunk_size
+        self.batch_size = batch_size
         self.hop_length = math.prod(encoder_rates)
         self.output_length = input_chunk_size // self.hop_length
 
@@ -277,7 +279,7 @@ class DAC(nn.Module):
         mod_spec = {
             "encode": {
                 "audio_data": nn.spec.Tensor(
-                    ["batch_size", 1, self.input_chunk_size], "float32"
+                    [self.batch_size, 1, self.input_chunk_size], "float32"
                 ),
                 "$": {
                     "param_mode": "packed",
@@ -286,7 +288,7 @@ class DAC(nn.Module):
             },
             "decode": {
                 "z": nn.spec.Tensor(
-                    ["batch_size", self.latent_dim, self.output_length], "float32"
+                    [self.batch_size, self.latent_dim, self.output_length], "float32"
                 ),
                 "$": {
                     "param_mode": "packed",
