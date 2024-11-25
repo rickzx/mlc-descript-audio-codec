@@ -10,3 +10,4 @@
 *.egg
 __pycache__
 .vscode/
+*logs

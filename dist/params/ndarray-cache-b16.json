@@ -1,0 +1,2911 @@
+{
+    "metadata": {
+        "encodeParamSize": 152,
+        "decodeParamSize": 89
+    },
+    "records": [
+        {
+            "dataPath": "params_shard_0.bin",
+            "format": "raw-shard",
+            "nbytes": 16777216,
+            "records": [
+                {
+                    "name": "encode_94",
+                    "shape": [
+                        1024,
+                        512,
+                        16
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 16777216,
+                    "byteOffset": 0
+                }
+            ],
+            "md5sum": "2c45c0fc1e93bc230ee2b2c2f105217b"
+        },
+        {
+            "dataPath": "params_shard_1.bin",
+            "format": "raw-shard",
+            "nbytes": 22020096,
+            "records": [
+                {
+                    "name": "decode_34",
+                    "shape": [
+                        1536,
+                        1024,
+                        7
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 22020096,
+                    "byteOffset": 0
+                }
+            ],
+            "md5sum": "256b495507c57fdbada2d8441bac855d"
+        },
+        {
+            "dataPath": "params_shard_2.bin",
+            "format": "raw-shard",
+            "nbytes": 37748736,
+            "records": [
+                {
+                    "name": "decode_36",
+                    "shape": [
+                        1536,
+                        768,
+                        16
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 37748736,
+                    "byteOffset": 0
+                }
+            ],
+            "md5sum": "916561f0439b904a14ac93d505030bad"
+        },
+        {
+            "dataPath": "params_shard_3.bin",
+            "format": "raw-shard",
+            "nbytes": 28477202,
+            "records": [
+                {
+                    "name": "encode_0",
+                    "shape": [
+                        1,
+                        64,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 128,
+                    "byteOffset": 0
+                },
+                {
+                    "name": "encode_1",
+                    "shape": [
+                        1,
+                        64,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 128,
+                    "byteOffset": 128
+                },
+                {
+                    "name": "encode_2",
+                    "shape": [
+                        1,
+                        64,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 128,
+                    "byteOffset": 256
+                },
+                {
+                    "name": "encode_3",
+                    "shape": [
+                        1,
+                        64,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 128,
+                    "byteOffset": 384
+                },
+                {
+                    "name": "encode_4",
+                    "shape": [
+                        1,
+                        64,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 128,
+                    "byteOffset": 512
+                },
+                {
+                    "name": "encode_5",
+                    "shape": [
+                        1,
+                        64,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 128,
+                    "byteOffset": 640
+                },
+                {
+                    "name": "encode_6",
+                    "shape": [
+                        1,
+                        64,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 128,
+                    "byteOffset": 768
+                },
+                {
+                    "name": "encode_7",
+                    "shape": [
+                        1,
+                        128,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 256,
+                    "byteOffset": 896
+                },
+                {
+                    "name": "encode_8",
+                    "shape": [
+                        1,
+                        128,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 256,
+                    "byteOffset": 1152
+                },
+                {
+                    "name": "encode_9",
+                    "shape": [
+                        1,
+                        128,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 256,
+                    "byteOffset": 1408
+                },
+                {
+                    "name": "encode_10",
+                    "shape": [
+                        1,
+                        128,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 256,
+                    "byteOffset": 1664
+                },
+                {
+                    "name": "encode_11",
+                    "shape": [
+                        1,
+                        128,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 256,
+                    "byteOffset": 1920
+                },
+                {
+                    "name": "encode_12",
+                    "shape": [
+                        1,
+                        128,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 256,
+                    "byteOffset": 2176
+                },
+                {
+                    "name": "encode_13",
+                    "shape": [
+                        1,
+                        128,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 256,
+                    "byteOffset": 2432
+                },
+                {
+                    "name": "encode_14",
+                    "shape": [
+                        1,
+                        256,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 512,
+                    "byteOffset": 2688
+                },
+                {
+                    "name": "encode_15",
+                    "shape": [
+                        1,
+                        256,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 512,
+                    "byteOffset": 3200
+                },
+                {
+                    "name": "encode_16",
+                    "shape": [
+                        1,
+                        256,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 512,
+                    "byteOffset": 3712
+                },
+                {
+                    "name": "encode_17",
+                    "shape": [
+                        1,
+                        256,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 512,
+                    "byteOffset": 4224
+                },
+                {
+                    "name": "encode_18",
+                    "shape": [
+                        1,
+                        256,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 512,
+                    "byteOffset": 4736
+                },
+                {
+                    "name": "encode_19",
+                    "shape": [
+                        1,
+                        256,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 512,
+                    "byteOffset": 5248
+                },
+                {
+                    "name": "encode_20",
+                    "shape": [
+                        1,
+                        256,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 512,
+                    "byteOffset": 5760
+                },
+                {
+                    "name": "encode_21",
+                    "shape": [
+                        1,
+                        512,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 1024,
+                    "byteOffset": 6272
+                },
+                {
+                    "name": "encode_22",
+                    "shape": [
+                        1,
+                        512,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 1024,
+                    "byteOffset": 7296
+                },
+                {
+                    "name": "encode_23",
+                    "shape": [
+                        1,
+                        512,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 1024,
+                    "byteOffset": 8320
+                },
+                {
+                    "name": "encode_24",
+                    "shape": [
+                        1,
+                        512,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 1024,
+                    "byteOffset": 9344
+                },
+                {
+                    "name": "encode_25",
+                    "shape": [
+                        1,
+                        512,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 1024,
+                    "byteOffset": 10368
+                },
+                {
+                    "name": "encode_26",
+                    "shape": [
+                        1,
+                        512,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 1024,
+                    "byteOffset": 11392
+                },
+                {
+                    "name": "encode_27",
+                    "shape": [
+                        1,
+                        512,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 1024,
+                    "byteOffset": 12416
+                },
+                {
+                    "name": "encode_28",
+                    "shape": [
+                        1,
+                        1024,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 2048,
+                    "byteOffset": 13440
+                },
+                {
+                    "name": "encode_29",
+                    "shape": [
+                        1024,
+                        8
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 16384,
+                    "byteOffset": 15488
+                },
+                {
+                    "name": "encode_30",
+                    "shape": [
+                        1024,
+                        8
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 16384,
+                    "byteOffset": 31872
+                },
+                {
+                    "name": "encode_31",
+                    "shape": [
+                        1024,
+                        8
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 16384,
+                    "byteOffset": 48256
+                },
+                {
+                    "name": "encode_32",
+                    "shape": [
+                        1024,
+                        8
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 16384,
+                    "byteOffset": 64640
+                },
+                {
+                    "name": "encode_33",
+                    "shape": [
+                        1024,
+                        8
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 16384,
+                    "byteOffset": 81024
+                },
+                {
+                    "name": "encode_34",
+                    "shape": [
+                        1024,
+                        8
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 16384,
+                    "byteOffset": 97408
+                },
+                {
+                    "name": "encode_35",
+                    "shape": [
+                        1024,
+                        8
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 16384,
+                    "byteOffset": 113792
+                },
+                {
+                    "name": "encode_36",
+                    "shape": [
+                        1024,
+                        8
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 16384,
+                    "byteOffset": 130176
+                },
+                {
+                    "name": "encode_37",
+                    "shape": [
+                        1024,
+                        8
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 16384,
+                    "byteOffset": 146560
+                },
+                {
+                    "name": "encode_38",
+                    "shape": [
+                        64,
+                        1,
+                        7
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 896,
+                    "byteOffset": 162944
+                },
+                {
+                    "name": "encode_39",
+                    "shape": [
+                        1,
+                        64,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 128,
+                    "byteOffset": 163840
+                },
+                {
+                    "name": "encode_40",
+                    "shape": [
+                        64,
+                        64,
+                        7
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 57344,
+                    "byteOffset": 163968
+                },
+                {
+                    "name": "encode_41",
+                    "shape": [
+                        1,
+                        64,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 128,
+                    "byteOffset": 221312
+                },
+                {
+                    "name": "encode_42",
+                    "shape": [
+                        64,
+                        64,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 8192,
+                    "byteOffset": 221440
+                },
+                {
+                    "name": "encode_43",
+                    "shape": [
+                        1,
+                        64,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 128,
+                    "byteOffset": 229632
+                },
+                {
+                    "name": "encode_44",
+                    "shape": [
+                        64,
+                        64,
+                        7
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 57344,
+                    "byteOffset": 229760
+                },
+                {
+                    "name": "encode_45",
+                    "shape": [
+                        1,
+                        64,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 128,
+                    "byteOffset": 287104
+                },
+                {
+                    "name": "encode_46",
+                    "shape": [
+                        64,
+                        64,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 8192,
+                    "byteOffset": 287232
+                },
+                {
+                    "name": "encode_47",
+                    "shape": [
+                        1,
+                        64,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 128,
+                    "byteOffset": 295424
+                },
+                {
+                    "name": "encode_48",
+                    "shape": [
+                        64,
+                        64,
+                        7
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 57344,
+                    "byteOffset": 295552
+                },
+                {
+                    "name": "encode_49",
+                    "shape": [
+                        1,
+                        64,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 128,
+                    "byteOffset": 352896
+                },
+                {
+                    "name": "encode_50",
+                    "shape": [
+                        64,
+                        64,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 8192,
+                    "byteOffset": 353024
+                },
+                {
+                    "name": "encode_51",
+                    "shape": [
+                        1,
+                        64,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 128,
+                    "byteOffset": 361216
+                },
+                {
+                    "name": "encode_52",
+                    "shape": [
+                        128,
+                        64,
+                        4
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 65536,
+                    "byteOffset": 361344
+                },
+                {
+                    "name": "encode_53",
+                    "shape": [
+                        1,
+                        128,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 256,
+                    "byteOffset": 426880
+                },
+                {
+                    "name": "encode_54",
+                    "shape": [
+                        128,
+                        128,
+                        7
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 229376,
+                    "byteOffset": 427136
+                },
+                {
+                    "name": "encode_55",
+                    "shape": [
+                        1,
+                        128,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 256,
+                    "byteOffset": 656512
+                },
+                {
+                    "name": "encode_56",
+                    "shape": [
+                        128,
+                        128,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 32768,
+                    "byteOffset": 656768
+                },
+                {
+                    "name": "encode_57",
+                    "shape": [
+                        1,
+                        128,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 256,
+                    "byteOffset": 689536
+                },
+                {
+                    "name": "encode_58",
+                    "shape": [
+                        128,
+                        128,
+                        7
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 229376,
+                    "byteOffset": 689792
+                },
+                {
+                    "name": "encode_59",
+                    "shape": [
+                        1,
+                        128,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 256,
+                    "byteOffset": 919168
+                },
+                {
+                    "name": "encode_60",
+                    "shape": [
+                        128,
+                        128,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 32768,
+                    "byteOffset": 919424
+                },
+                {
+                    "name": "encode_61",
+                    "shape": [
+                        1,
+                        128,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 256,
+                    "byteOffset": 952192
+                },
+                {
+                    "name": "encode_62",
+                    "shape": [
+                        128,
+                        128,
+                        7
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 229376,
+                    "byteOffset": 952448
+                },
+                {
+                    "name": "encode_63",
+                    "shape": [
+                        1,
+                        128,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 256,
+                    "byteOffset": 1181824
+                },
+                {
+                    "name": "encode_64",
+                    "shape": [
+                        128,
+                        128,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 32768,
+                    "byteOffset": 1182080
+                },
+                {
+                    "name": "encode_65",
+                    "shape": [
+                        1,
+                        128,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 256,
+                    "byteOffset": 1214848
+                },
+                {
+                    "name": "encode_66",
+                    "shape": [
+                        256,
+                        128,
+                        8
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 524288,
+                    "byteOffset": 1215104
+                },
+                {
+                    "name": "encode_67",
+                    "shape": [
+                        1,
+                        256,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 512,
+                    "byteOffset": 1739392
+                },
+                {
+                    "name": "encode_68",
+                    "shape": [
+                        256,
+                        256,
+                        7
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 917504,
+                    "byteOffset": 1739904
+                },
+                {
+                    "name": "encode_69",
+                    "shape": [
+                        1,
+                        256,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 512,
+                    "byteOffset": 2657408
+                },
+                {
+                    "name": "encode_70",
+                    "shape": [
+                        256,
+                        256,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 131072,
+                    "byteOffset": 2657920
+                },
+                {
+                    "name": "encode_71",
+                    "shape": [
+                        1,
+                        256,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 512,
+                    "byteOffset": 2788992
+                },
+                {
+                    "name": "encode_72",
+                    "shape": [
+                        256,
+                        256,
+                        7
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 917504,
+                    "byteOffset": 2789504
+                },
+                {
+                    "name": "encode_73",
+                    "shape": [
+                        1,
+                        256,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 512,
+                    "byteOffset": 3707008
+                },
+                {
+                    "name": "encode_74",
+                    "shape": [
+                        256,
+                        256,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 131072,
+                    "byteOffset": 3707520
+                },
+                {
+                    "name": "encode_75",
+                    "shape": [
+                        1,
+                        256,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 512,
+                    "byteOffset": 3838592
+                },
+                {
+                    "name": "encode_76",
+                    "shape": [
+                        256,
+                        256,
+                        7
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 917504,
+                    "byteOffset": 3839104
+                },
+                {
+                    "name": "encode_77",
+                    "shape": [
+                        1,
+                        256,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 512,
+                    "byteOffset": 4756608
+                },
+                {
+                    "name": "encode_78",
+                    "shape": [
+                        256,
+                        256,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 131072,
+                    "byteOffset": 4757120
+                },
+                {
+                    "name": "encode_79",
+                    "shape": [
+                        1,
+                        256,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 512,
+                    "byteOffset": 4888192
+                },
+                {
+                    "name": "encode_80",
+                    "shape": [
+                        512,
+                        256,
+                        16
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 4194304,
+                    "byteOffset": 4888704
+                },
+                {
+                    "name": "encode_81",
+                    "shape": [
+                        1,
+                        512,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 1024,
+                    "byteOffset": 9083008
+                },
+                {
+                    "name": "encode_82",
+                    "shape": [
+                        512,
+                        512,
+                        7
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 3670016,
+                    "byteOffset": 9084032
+                },
+                {
+                    "name": "encode_83",
+                    "shape": [
+                        1,
+                        512,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 1024,
+                    "byteOffset": 12754048
+                },
+                {
+                    "name": "encode_84",
+                    "shape": [
+                        512,
+                        512,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 524288,
+                    "byteOffset": 12755072
+                },
+                {
+                    "name": "encode_85",
+                    "shape": [
+                        1,
+                        512,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 1024,
+                    "byteOffset": 13279360
+                },
+                {
+                    "name": "encode_86",
+                    "shape": [
+                        512,
+                        512,
+                        7
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 3670016,
+                    "byteOffset": 13280384
+                },
+                {
+                    "name": "encode_87",
+                    "shape": [
+                        1,
+                        512,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 1024,
+                    "byteOffset": 16950400
+                },
+                {
+                    "name": "encode_88",
+                    "shape": [
+                        512,
+                        512,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 524288,
+                    "byteOffset": 16951424
+                },
+                {
+                    "name": "encode_89",
+                    "shape": [
+                        1,
+                        512,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 1024,
+                    "byteOffset": 17475712
+                },
+                {
+                    "name": "encode_90",
+                    "shape": [
+                        512,
+                        512,
+                        7
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 3670016,
+                    "byteOffset": 17476736
+                },
+                {
+                    "name": "encode_91",
+                    "shape": [
+                        1,
+                        512,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 1024,
+                    "byteOffset": 21146752
+                },
+                {
+                    "name": "encode_92",
+                    "shape": [
+                        512,
+                        512,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 524288,
+                    "byteOffset": 21147776
+                },
+                {
+                    "name": "encode_93",
+                    "shape": [
+                        1,
+                        512,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 1024,
+                    "byteOffset": 21672064
+                },
+                {
+                    "name": "encode_95",
+                    "shape": [
+                        1,
+                        1024,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 2048,
+                    "byteOffset": 21673088
+                },
+                {
+                    "name": "encode_96",
+                    "shape": [
+                        1024,
+                        1024,
+                        3
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 6291456,
+                    "byteOffset": 21675136
+                },
+                {
+                    "name": "encode_97",
+                    "shape": [
+                        1,
+                        1024,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 2048,
+                    "byteOffset": 27966592
+                },
+                {
+                    "name": "encode_98",
+                    "shape": [
+                        8,
+                        1024,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 16384,
+                    "byteOffset": 27968640
+                },
+                {
+                    "name": "encode_99",
+                    "shape": [
+                        1,
+                        8,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 16,
+                    "byteOffset": 27985024
+                },
+                {
+                    "name": "encode_100",
+                    "shape": [
+                        8,
+                        1024
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 16384,
+                    "byteOffset": 27985040
+                },
+                {
+                    "name": "encode_101",
+                    "shape": [
+                        1,
+                        1024
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 2048,
+                    "byteOffset": 28001424
+                },
+                {
+                    "name": "encode_102",
+                    "shape": [
+                        1024,
+                        8,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 16384,
+                    "byteOffset": 28003472
+                },
+                {
+                    "name": "encode_103",
+                    "shape": [
+                        1,
+                        1024,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 2048,
+                    "byteOffset": 28019856
+                },
+                {
+                    "name": "encode_104",
+                    "shape": [
+                        8,
+                        1024,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 16384,
+                    "byteOffset": 28021904
+                },
+                {
+                    "name": "encode_105",
+                    "shape": [
+                        1,
+                        8,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 16,
+                    "byteOffset": 28038288
+                },
+                {
+                    "name": "encode_106",
+                    "shape": [
+                        8,
+                        1024
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 16384,
+                    "byteOffset": 28038304
+                },
+                {
+                    "name": "encode_107",
+                    "shape": [
+                        1,
+                        1024
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 2048,
+                    "byteOffset": 28054688
+                },
+                {
+                    "name": "encode_108",
+                    "shape": [
+                        1024,
+                        8,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 16384,
+                    "byteOffset": 28056736
+                },
+                {
+                    "name": "encode_109",
+                    "shape": [
+                        1,
+                        1024,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 2048,
+                    "byteOffset": 28073120
+                },
+                {
+                    "name": "encode_110",
+                    "shape": [
+                        8,
+                        1024,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 16384,
+                    "byteOffset": 28075168
+                },
+                {
+                    "name": "encode_111",
+                    "shape": [
+                        1,
+                        8,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 16,
+                    "byteOffset": 28091552
+                },
+                {
+                    "name": "encode_112",
+                    "shape": [
+                        8,
+                        1024
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 16384,
+                    "byteOffset": 28091568
+                },
+                {
+                    "name": "encode_113",
+                    "shape": [
+                        1,
+                        1024
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 2048,
+                    "byteOffset": 28107952
+                },
+                {
+                    "name": "encode_114",
+                    "shape": [
+                        1024,
+                        8,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 16384,
+                    "byteOffset": 28110000
+                },
+                {
+                    "name": "encode_115",
+                    "shape": [
+                        1,
+                        1024,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 2048,
+                    "byteOffset": 28126384
+                },
+                {
+                    "name": "encode_116",
+                    "shape": [
+                        8,
+                        1024,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 16384,
+                    "byteOffset": 28128432
+                },
+                {
+                    "name": "encode_117",
+                    "shape": [
+                        1,
+                        8,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 16,
+                    "byteOffset": 28144816
+                },
+                {
+                    "name": "encode_118",
+                    "shape": [
+                        8,
+                        1024
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 16384,
+                    "byteOffset": 28144832
+                },
+                {
+                    "name": "encode_119",
+                    "shape": [
+                        1,
+                        1024
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 2048,
+                    "byteOffset": 28161216
+                },
+                {
+                    "name": "encode_120",
+                    "shape": [
+                        1024,
+                        8,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 16384,
+                    "byteOffset": 28163264
+                },
+                {
+                    "name": "encode_121",
+                    "shape": [
+                        1,
+                        1024,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 2048,
+                    "byteOffset": 28179648
+                },
+                {
+                    "name": "encode_122",
+                    "shape": [
+                        8,
+                        1024,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 16384,
+                    "byteOffset": 28181696
+                },
+                {
+                    "name": "encode_123",
+                    "shape": [
+                        1,
+                        8,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 16,
+                    "byteOffset": 28198080
+                },
+                {
+                    "name": "encode_124",
+                    "shape": [
+                        8,
+                        1024
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 16384,
+                    "byteOffset": 28198096
+                },
+                {
+                    "name": "encode_125",
+                    "shape": [
+                        1,
+                        1024
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 2048,
+                    "byteOffset": 28214480
+                },
+                {
+                    "name": "encode_126",
+                    "shape": [
+                        1024,
+                        8,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 16384,
+                    "byteOffset": 28216528
+                },
+                {
+                    "name": "encode_127",
+                    "shape": [
+                        1,
+                        1024,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 2048,
+                    "byteOffset": 28232912
+                },
+                {
+                    "name": "encode_128",
+                    "shape": [
+                        8,
+                        1024,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 16384,
+                    "byteOffset": 28234960
+                },
+                {
+                    "name": "encode_129",
+                    "shape": [
+                        1,
+                        8,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 16,
+                    "byteOffset": 28251344
+                },
+                {
+                    "name": "encode_130",
+                    "shape": [
+                        8,
+                        1024
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 16384,
+                    "byteOffset": 28251360
+                },
+                {
+                    "name": "encode_131",
+                    "shape": [
+                        1,
+                        1024
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 2048,
+                    "byteOffset": 28267744
+                },
+                {
+                    "name": "encode_132",
+                    "shape": [
+                        1024,
+                        8,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 16384,
+                    "byteOffset": 28269792
+                },
+                {
+                    "name": "encode_133",
+                    "shape": [
+                        1,
+                        1024,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 2048,
+                    "byteOffset": 28286176
+                },
+                {
+                    "name": "encode_134",
+                    "shape": [
+                        8,
+                        1024,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 16384,
+                    "byteOffset": 28288224
+                },
+                {
+                    "name": "encode_135",
+                    "shape": [
+                        1,
+                        8,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 16,
+                    "byteOffset": 28304608
+                },
+                {
+                    "name": "encode_136",
+                    "shape": [
+                        8,
+                        1024
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 16384,
+                    "byteOffset": 28304624
+                },
+                {
+                    "name": "encode_137",
+                    "shape": [
+                        1,
+                        1024
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 2048,
+                    "byteOffset": 28321008
+                },
+                {
+                    "name": "encode_138",
+                    "shape": [
+                        1024,
+                        8,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 16384,
+                    "byteOffset": 28323056
+                },
+                {
+                    "name": "encode_139",
+                    "shape": [
+                        1,
+                        1024,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 2048,
+                    "byteOffset": 28339440
+                },
+                {
+                    "name": "encode_140",
+                    "shape": [
+                        8,
+                        1024,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 16384,
+                    "byteOffset": 28341488
+                },
+                {
+                    "name": "encode_141",
+                    "shape": [
+                        1,
+                        8,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 16,
+                    "byteOffset": 28357872
+                },
+                {
+                    "name": "encode_142",
+                    "shape": [
+                        8,
+                        1024
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 16384,
+                    "byteOffset": 28357888
+                },
+                {
+                    "name": "encode_143",
+                    "shape": [
+                        1,
+                        1024
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 2048,
+                    "byteOffset": 28374272
+                },
+                {
+                    "name": "encode_144",
+                    "shape": [
+                        1024,
+                        8,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 16384,
+                    "byteOffset": 28376320
+                },
+                {
+                    "name": "encode_145",
+                    "shape": [
+                        1,
+                        1024,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 2048,
+                    "byteOffset": 28392704
+                },
+                {
+                    "name": "encode_146",
+                    "shape": [
+                        8,
+                        1024,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 16384,
+                    "byteOffset": 28394752
+                },
+                {
+                    "name": "encode_147",
+                    "shape": [
+                        1,
+                        8,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 16,
+                    "byteOffset": 28411136
+                },
+                {
+                    "name": "encode_148",
+                    "shape": [
+                        8,
+                        1024
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 16384,
+                    "byteOffset": 28411152
+                },
+                {
+                    "name": "encode_149",
+                    "shape": [
+                        1,
+                        1024
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 2048,
+                    "byteOffset": 28427536
+                },
+                {
+                    "name": "encode_150",
+                    "shape": [
+                        1024,
+                        8,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 16384,
+                    "byteOffset": 28429584
+                },
+                {
+                    "name": "encode_151",
+                    "shape": [
+                        1,
+                        1024,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 2048,
+                    "byteOffset": 28445968
+                },
+                {
+                    "name": "decode_0",
+                    "shape": [
+                        1,
+                        1536,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 3072,
+                    "byteOffset": 28448016
+                },
+                {
+                    "name": "decode_1",
+                    "shape": [
+                        768
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 1536,
+                    "byteOffset": 28451088
+                },
+                {
+                    "name": "decode_2",
+                    "shape": [
+                        1,
+                        768,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 1536,
+                    "byteOffset": 28452624
+                },
+                {
+                    "name": "decode_3",
+                    "shape": [
+                        1,
+                        768,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 1536,
+                    "byteOffset": 28454160
+                },
+                {
+                    "name": "decode_4",
+                    "shape": [
+                        1,
+                        768,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 1536,
+                    "byteOffset": 28455696
+                },
+                {
+                    "name": "decode_5",
+                    "shape": [
+                        1,
+                        768,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 1536,
+                    "byteOffset": 28457232
+                },
+                {
+                    "name": "decode_6",
+                    "shape": [
+                        1,
+                        768,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 1536,
+                    "byteOffset": 28458768
+                },
+                {
+                    "name": "decode_7",
+                    "shape": [
+                        1,
+                        768,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 1536,
+                    "byteOffset": 28460304
+                },
+                {
+                    "name": "decode_8",
+                    "shape": [
+                        1,
+                        768,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 1536,
+                    "byteOffset": 28461840
+                },
+                {
+                    "name": "decode_9",
+                    "shape": [
+                        384
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 768,
+                    "byteOffset": 28463376
+                },
+                {
+                    "name": "decode_10",
+                    "shape": [
+                        1,
+                        384,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 768,
+                    "byteOffset": 28464144
+                },
+                {
+                    "name": "decode_11",
+                    "shape": [
+                        1,
+                        384,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 768,
+                    "byteOffset": 28464912
+                },
+                {
+                    "name": "decode_12",
+                    "shape": [
+                        1,
+                        384,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 768,
+                    "byteOffset": 28465680
+                },
+                {
+                    "name": "decode_13",
+                    "shape": [
+                        1,
+                        384,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 768,
+                    "byteOffset": 28466448
+                },
+                {
+                    "name": "decode_14",
+                    "shape": [
+                        1,
+                        384,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 768,
+                    "byteOffset": 28467216
+                },
+                {
+                    "name": "decode_15",
+                    "shape": [
+                        1,
+                        384,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 768,
+                    "byteOffset": 28467984
+                },
+                {
+                    "name": "decode_16",
+                    "shape": [
+                        1,
+                        384,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 768,
+                    "byteOffset": 28468752
+                },
+                {
+                    "name": "decode_17",
+                    "shape": [
+                        192
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 384,
+                    "byteOffset": 28469520
+                },
+                {
+                    "name": "decode_18",
+                    "shape": [
+                        1,
+                        192,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 384,
+                    "byteOffset": 28469904
+                },
+                {
+                    "name": "decode_19",
+                    "shape": [
+                        1,
+                        192,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 384,
+                    "byteOffset": 28470288
+                },
+                {
+                    "name": "decode_20",
+                    "shape": [
+                        1,
+                        192,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 384,
+                    "byteOffset": 28470672
+                },
+                {
+                    "name": "decode_21",
+                    "shape": [
+                        1,
+                        192,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 384,
+                    "byteOffset": 28471056
+                },
+                {
+                    "name": "decode_22",
+                    "shape": [
+                        1,
+                        192,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 384,
+                    "byteOffset": 28471440
+                },
+                {
+                    "name": "decode_23",
+                    "shape": [
+                        1,
+                        192,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 384,
+                    "byteOffset": 28471824
+                },
+                {
+                    "name": "decode_24",
+                    "shape": [
+                        1,
+                        192,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 384,
+                    "byteOffset": 28472208
+                },
+                {
+                    "name": "decode_25",
+                    "shape": [
+                        96
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 192,
+                    "byteOffset": 28472592
+                },
+                {
+                    "name": "decode_26",
+                    "shape": [
+                        1,
+                        96,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 192,
+                    "byteOffset": 28472784
+                },
+                {
+                    "name": "decode_27",
+                    "shape": [
+                        1,
+                        96,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 192,
+                    "byteOffset": 28472976
+                },
+                {
+                    "name": "decode_28",
+                    "shape": [
+                        1,
+                        96,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 192,
+                    "byteOffset": 28473168
+                },
+                {
+                    "name": "decode_29",
+                    "shape": [
+                        1,
+                        96,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 192,
+                    "byteOffset": 28473360
+                },
+                {
+                    "name": "decode_30",
+                    "shape": [
+                        1,
+                        96,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 192,
+                    "byteOffset": 28473552
+                },
+                {
+                    "name": "decode_31",
+                    "shape": [
+                        1,
+                        96,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 192,
+                    "byteOffset": 28473744
+                },
+                {
+                    "name": "decode_32",
+                    "shape": [
+                        1,
+                        96,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 192,
+                    "byteOffset": 28473936
+                },
+                {
+                    "name": "decode_33",
+                    "shape": [
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 2,
+                    "byteOffset": 28474128
+                },
+                {
+                    "name": "decode_35",
+                    "shape": [
+                        1,
+                        1536,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 3072,
+                    "byteOffset": 28474130
+                }
+            ],
+            "md5sum": "cab14e2907a14401ad742ef74cf64c1e"
+        },
+        {
+            "dataPath": "params_shard_4.bin",
+            "format": "raw-shard",
+            "nbytes": 28320768,
+            "records": [
+                {
+                    "name": "decode_37",
+                    "shape": [
+                        768,
+                        768,
+                        7
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 8257536,
+                    "byteOffset": 0
+                },
+                {
+                    "name": "decode_38",
+                    "shape": [
+                        1,
+                        768,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 1536,
+                    "byteOffset": 8257536
+                },
+                {
+                    "name": "decode_39",
+                    "shape": [
+                        768,
+                        768,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 1179648,
+                    "byteOffset": 8259072
+                },
+                {
+                    "name": "decode_40",
+                    "shape": [
+                        1,
+                        768,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 1536,
+                    "byteOffset": 9438720
+                },
+                {
+                    "name": "decode_41",
+                    "shape": [
+                        768,
+                        768,
+                        7
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 8257536,
+                    "byteOffset": 9440256
+                },
+                {
+                    "name": "decode_42",
+                    "shape": [
+                        1,
+                        768,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 1536,
+                    "byteOffset": 17697792
+                },
+                {
+                    "name": "decode_43",
+                    "shape": [
+                        768,
+                        768,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 1179648,
+                    "byteOffset": 17699328
+                },
+                {
+                    "name": "decode_44",
+                    "shape": [
+                        1,
+                        768,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 1536,
+                    "byteOffset": 18878976
+                },
+                {
+                    "name": "decode_45",
+                    "shape": [
+                        768,
+                        768,
+                        7
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 8257536,
+                    "byteOffset": 18880512
+                },
+                {
+                    "name": "decode_46",
+                    "shape": [
+                        1,
+                        768,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 1536,
+                    "byteOffset": 27138048
+                },
+                {
+                    "name": "decode_47",
+                    "shape": [
+                        768,
+                        768,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 1179648,
+                    "byteOffset": 27139584
+                },
+                {
+                    "name": "decode_48",
+                    "shape": [
+                        1,
+                        768,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 1536,
+                    "byteOffset": 28319232
+                }
+            ],
+            "md5sum": "fd7c4de1be08e569bf092637a813d7c2"
+        },
+        {
+            "dataPath": "params_shard_5.bin",
+            "format": "raw-shard",
+            "nbytes": 20063424,
+            "records": [
+                {
+                    "name": "decode_49",
+                    "shape": [
+                        768,
+                        384,
+                        16
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 9437184,
+                    "byteOffset": 0
+                },
+                {
+                    "name": "decode_50",
+                    "shape": [
+                        384,
+                        384,
+                        7
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 2064384,
+                    "byteOffset": 9437184
+                },
+                {
+                    "name": "decode_51",
+                    "shape": [
+                        1,
+                        384,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 768,
+                    "byteOffset": 11501568
+                },
+                {
+                    "name": "decode_52",
+                    "shape": [
+                        384,
+                        384,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 294912,
+                    "byteOffset": 11502336
+                },
+                {
+                    "name": "decode_53",
+                    "shape": [
+                        1,
+                        384,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 768,
+                    "byteOffset": 11797248
+                },
+                {
+                    "name": "decode_54",
+                    "shape": [
+                        384,
+                        384,
+                        7
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 2064384,
+                    "byteOffset": 11798016
+                },
+                {
+                    "name": "decode_55",
+                    "shape": [
+                        1,
+                        384,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 768,
+                    "byteOffset": 13862400
+                },
+                {
+                    "name": "decode_56",
+                    "shape": [
+                        384,
+                        384,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 294912,
+                    "byteOffset": 13863168
+                },
+                {
+                    "name": "decode_57",
+                    "shape": [
+                        1,
+                        384,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 768,
+                    "byteOffset": 14158080
+                },
+                {
+                    "name": "decode_58",
+                    "shape": [
+                        384,
+                        384,
+                        7
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 2064384,
+                    "byteOffset": 14158848
+                },
+                {
+                    "name": "decode_59",
+                    "shape": [
+                        1,
+                        384,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 768,
+                    "byteOffset": 16223232
+                },
+                {
+                    "name": "decode_60",
+                    "shape": [
+                        384,
+                        384,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 294912,
+                    "byteOffset": 16224000
+                },
+                {
+                    "name": "decode_61",
+                    "shape": [
+                        1,
+                        384,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 768,
+                    "byteOffset": 16518912
+                },
+                {
+                    "name": "decode_62",
+                    "shape": [
+                        384,
+                        192,
+                        8
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 1179648,
+                    "byteOffset": 16519680
+                },
+                {
+                    "name": "decode_63",
+                    "shape": [
+                        192,
+                        192,
+                        7
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 516096,
+                    "byteOffset": 17699328
+                },
+                {
+                    "name": "decode_64",
+                    "shape": [
+                        1,
+                        192,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 384,
+                    "byteOffset": 18215424
+                },
+                {
+                    "name": "decode_65",
+                    "shape": [
+                        192,
+                        192,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 73728,
+                    "byteOffset": 18215808
+                },
+                {
+                    "name": "decode_66",
+                    "shape": [
+                        1,
+                        192,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 384,
+                    "byteOffset": 18289536
+                },
+                {
+                    "name": "decode_67",
+                    "shape": [
+                        192,
+                        192,
+                        7
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 516096,
+                    "byteOffset": 18289920
+                },
+                {
+                    "name": "decode_68",
+                    "shape": [
+                        1,
+                        192,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 384,
+                    "byteOffset": 18806016
+                },
+                {
+                    "name": "decode_69",
+                    "shape": [
+                        192,
+                        192,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 73728,
+                    "byteOffset": 18806400
+                },
+                {
+                    "name": "decode_70",
+                    "shape": [
+                        1,
+                        192,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 384,
+                    "byteOffset": 18880128
+                },
+                {
+                    "name": "decode_71",
+                    "shape": [
+                        192,
+                        192,
+                        7
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 516096,
+                    "byteOffset": 18880512
+                },
+                {
+                    "name": "decode_72",
+                    "shape": [
+                        1,
+                        192,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 384,
+                    "byteOffset": 19396608
+                },
+                {
+                    "name": "decode_73",
+                    "shape": [
+                        192,
+                        192,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 73728,
+                    "byteOffset": 19396992
+                },
+                {
+                    "name": "decode_74",
+                    "shape": [
+                        1,
+                        192,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 384,
+                    "byteOffset": 19470720
+                },
+                {
+                    "name": "decode_75",
+                    "shape": [
+                        192,
+                        96,
+                        4
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 147456,
+                    "byteOffset": 19471104
+                },
+                {
+                    "name": "decode_76",
+                    "shape": [
+                        96,
+                        96,
+                        7
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 129024,
+                    "byteOffset": 19618560
+                },
+                {
+                    "name": "decode_77",
+                    "shape": [
+                        1,
+                        96,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 192,
+                    "byteOffset": 19747584
+                },
+                {
+                    "name": "decode_78",
+                    "shape": [
+                        96,
+                        96,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 18432,
+                    "byteOffset": 19747776
+                },
+                {
+                    "name": "decode_79",
+                    "shape": [
+                        1,
+                        96,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 192,
+                    "byteOffset": 19766208
+                },
+                {
+                    "name": "decode_80",
+                    "shape": [
+                        96,
+                        96,
+                        7
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 129024,
+                    "byteOffset": 19766400
+                },
+                {
+                    "name": "decode_81",
+                    "shape": [
+                        1,
+                        96,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 192,
+                    "byteOffset": 19895424
+                },
+                {
+                    "name": "decode_82",
+                    "shape": [
+                        96,
+                        96,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 18432,
+                    "byteOffset": 19895616
+                },
+                {
+                    "name": "decode_83",
+                    "shape": [
+                        1,
+                        96,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 192,
+                    "byteOffset": 19914048
+                },
+                {
+                    "name": "decode_84",
+                    "shape": [
+                        96,
+                        96,
+                        7
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 129024,
+                    "byteOffset": 19914240
+                },
+                {
+                    "name": "decode_85",
+                    "shape": [
+                        1,
+                        96,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 192,
+                    "byteOffset": 20043264
+                },
+                {
+                    "name": "decode_86",
+                    "shape": [
+                        96,
+                        96,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 18432,
+                    "byteOffset": 20043456
+                },
+                {
+                    "name": "decode_87",
+                    "shape": [
+                        1,
+                        96,
+                        1
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 192,
+                    "byteOffset": 20061888
+                },
+                {
+                    "name": "decode_88",
+                    "shape": [
+                        1,
+                        96,
+                        7
+                    ],
+                    "dtype": "bfloat16",
+                    "format": "raw",
+                    "nbytes": 1344,
+                    "byteOffset": 20062080
+                }
+            ],
+            "md5sum": "8dafd7c3869e0b6c3c6aca71dc93d293"
+        }
+    ]
+}

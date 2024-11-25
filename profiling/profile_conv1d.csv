@@ -1,5 +1,0 @@
-Argument Shapes,Count,Device,Duration (us),Name,Percent
-"float32[1, 128, 220500]",1,"metal0",9630.75,"vm.builtin.check_tensor_info",51.0724
-"float32[1, 128, 220500]",1,"metal0",114.75,"vm.builtin.match_shape",0.608526
-"float32[128]",1,"metal0",103.834,"vm.builtin.reshape",0.550638
-"float32[1, 128, 220500], float32[128, 128, 7], float32[1, 128, 1], float32[1, 128, 220500]",1,"metal0",8893.92,"fused_conv1d_add",47.165
