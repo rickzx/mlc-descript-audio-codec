@@ -45,8 +45,7 @@ class VectorQuantize(nn.Module):
             )  # (1, N)
         )  # (b*t, N)
 
-        indices = nn.op.argsort(dist, axis=1)  # (b*t, N)
-        indices = nn.op.take(indices, nn.Tensor.from_const([0]), axis=1)  # (b*t, 1)
+        indices = nn.op.topk(dist, k=1, axis=1, largest=False, ret_type="indices")  # (b*t, 1)
         indices = nn.op.reshape(indices, [latents.shape[0], latents.shape[2]])  # (b, t)
 
         z_q = self.codebook(indices)  # (b, t, d)
