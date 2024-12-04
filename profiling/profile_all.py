@@ -1,13 +1,14 @@
+import argparse
 import time
 import warnings
-from typing import List, Tuple, Dict
+from typing import Dict, List, Tuple
 
 import dac
 import numpy as np
 import torch
 import tvm
-from tvm import relax
 from torch.nn import Module
+from tvm import relax
 from tvm.contrib import tvmjs
 from tvm.relax.frontend.nn import Parameter
 from tvm.runtime import Device
@@ -25,6 +26,7 @@ def benchmark_torch(
     warmup_rounds: int = 2,
     device: str = "cpu",
     streaming: bool = False,
+    is_profile_encode=True,
 ) -> float:
     if device not in ["cpu", "mps"]:
         raise ValueError("Device must be either 'cpu' or 'mps'")
@@ -37,14 +39,17 @@ def benchmark_torch(
 
     dummy_input = torch.randn(input_shape, device=device)
 
+    chunk_size = 512 if is_profile_encode else 1
+    profile_fn = model.encode if is_profile_encode else model.decode
+
     print("Performing warmup...")
     with torch.no_grad():
         for _ in range(warmup_rounds):
             if streaming:
-                for i in range(0, dummy_input.shape[-1], 512):
-                    model.encode(dummy_input[..., i : i + 512])[1]
+                for i in range(0, dummy_input.shape[-1], chunk_size):
+                    profile_fn(dummy_input[..., i : i + chunk_size])
             else:
-               model.encode(dummy_input)
+                profile_fn(dummy_input)
             if device == "mps":
                 torch.mps.synchronize()
 
@@ -54,10 +59,10 @@ def benchmark_torch(
         for _ in range(num_repeats):
             start = time.perf_counter()
             if streaming:
-                for i in range(0, dummy_input.shape[-1], 512):
-                    model.encode(dummy_input[..., i : i + 512])[1]
+                for i in range(0, dummy_input.shape[-1], chunk_size):
+                    profile_fn(dummy_input[..., i : i + chunk_size])
             else:
-               model.encode(dummy_input)
+                profile_fn(dummy_input)
             if device == "mps":
                 torch.mps.synchronize()
             total_time += time.perf_counter() - start
@@ -75,9 +80,10 @@ def benchmark_tvm(
     num_repeats: int = 5,
     warmup_rounds: int = 2,
     packed_params: bool = False,
+    is_profile_encode=True,
 ) -> float:
-    # Split audio data into chunks of 512 samples
-    chunks = np.array_split(audio_data, audio_data.shape[-1] // 512, axis=-1)
+    chunk_size = 512 if is_profile_encode else 1
+    chunks = np.array_split(audio_data, audio_data.shape[-1] // chunk_size, axis=-1)
     chunks = [tvm.nd.array(chunk, device=device) for chunk in chunks]
 
     # Warmup phase
@@ -108,12 +114,18 @@ def benchmark_tvm(
     return mean_time
 
 
-def profile_torch(model_path, device, streaming):
+def profile_torch(model_path, device, streaming, is_profile_encode=True):
     print(f"Configuration - Backend: Torch, Device: {device}, Streaming: {streaming}")
     dac.DAC.enable_streaming(streaming)
     model = dac.DAC.load(model_path)
-    input_shape = (1, 1, 512000)
-    time = benchmark_torch(model, input_shape, device=device, streaming=streaming)
+    input_shape = (1, 1, 512000) if is_profile_encode else (1, 1024, 1000)
+    time = benchmark_torch(
+        model,
+        input_shape,
+        device=device,
+        streaming=streaming,
+        is_profile_encode=is_profile_encode,
+    )
     print(f"Time taken: {time:.2f} ms")
 
 
@@ -131,7 +143,7 @@ def load_params_tvm(
     return plist
 
 
-def profile_tvm_untuned():
+def profile_tvm_untuned(is_profile_encode=True):
     print(f"Configuration - Backend: TVM (Untuned), Device: CPU, Streaming: True")
     ex = tvm.runtime.load_module("../dist/deploy-untuned-metal.so")
     model = mlc_dac.dac.DAC(input_chunk_size=512)
@@ -145,10 +157,14 @@ def profile_tvm_untuned():
 
     vm = relax.VirtualMachine(ex, device)
     effects = vm["_initialize_effect"]()
-    forward_fn = vm["encode"]
+    forward_fn = vm["encode"] if is_profile_encode else vm["decode"]
 
-    audio_data = np.random.randn(1, 1, 512000).astype("float32")
-    time = benchmark_tvm(forward_fn, effects, params, audio_data, device)
+    audio_data = (
+        np.random.randn(1, 1, 512000).astype("float32")
+        if is_profile_encode
+        else np.random.randn(1, 1024, 1000).astype("float32")
+    )
+    time = benchmark_tvm(forward_fn, effects, params, audio_data, device, is_profile_encode=is_profile_encode)
     print(f"Time taken: {time:.2f} ms")
 
 
@@ -168,28 +184,50 @@ def load_transformed_params(
     return pdict
 
 
-def profile_tvm_tuned():
+def profile_tvm_tuned(is_profile_encode=True):
     print(f"Configuration - Backend: TVM (Tuned), Device: CPU, Streaming: True")
     ex = tvm.runtime.load_module("../dist/deploy-metal.so")
 
     device = tvm.metal()
     const_params_dict = load_transformed_params("../dist", device)
     vm = relax.vm.VirtualMachine(ex, device)
-    forward_fn = vm["encode"]
+    forward_fn = vm["encode"] if is_profile_encode else vm["decode"]
     effects = vm["_initialize_effect"]()
 
-    audio_data = np.random.randn(1, 1, 512000).astype("float32")
+    audio_data = (
+        np.random.randn(1, 1, 512000).astype("float32")
+        if is_profile_encode
+        else np.random.randn(1, 1024, 1000).astype("float32")
+    )
     time = benchmark_tvm(
-        forward_fn, effects, const_params_dict["encode"], audio_data, device, packed_params=True
+        forward_fn,
+        effects,
+        (
+            const_params_dict["encode"]
+            if is_profile_encode
+            else const_params_dict["decode"]
+        ),
+        audio_data,
+        device,
+        packed_params=True,
+        is_profile_encode=is_profile_encode,
     )
     print(f"Time taken: {time:.2f} ms")
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--decode", action="store_true", help="Profile the decode model"
+    )
+
+    args = parser.parse_args()
+    is_profile_encode = not args.decode
+
     model_path = dac.utils.download(model_type="44khz")
-    profile_torch(model_path, "cpu", streaming=False)
-    profile_torch(model_path, "mps", streaming=False)
-    profile_torch(model_path, "cpu", streaming=True)
-    profile_torch(model_path, "mps", streaming=True)
-    profile_tvm_untuned()
-    profile_tvm_tuned()
+    profile_torch(model_path, "cpu", streaming=False, is_profile_encode=is_profile_encode)
+    profile_torch(model_path, "mps", streaming=False, is_profile_encode=is_profile_encode)
+    profile_torch(model_path, "cpu", streaming=True, is_profile_encode=is_profile_encode)
+    profile_torch(model_path, "mps", streaming=True, is_profile_encode=is_profile_encode)
+    # profile_tvm_untuned(is_profile_encode=is_profile_encode)
+    profile_tvm_tuned(is_profile_encode=is_profile_encode)
